@@ -8,19 +8,19 @@ import Sky from "../models/Sky";
 import Bird from "../models/Bird";
 import Robot from "../models/Robot";
 import Plane from "../models/Plane";
-import { useLocation } from "react-router-dom";
+import Fox from "../models/Fox";
+import Cactus from "../models/Cactus";
 
 const Home = () => {
-  const [isRotating, setIsRotating] = useState();
+  const [isRotating, setIsRotating] = useState(false);
   const [currentStage, setCurrentStage] = useState(1);
-  const location = useLocation();
 
   const adjustBackground = () => {
     let screenScale = null;
     let rotation = [0.3, 2.7, 0];
 
     if (window.innerWidth < 768) {
-      screenScale = [0.1, 0.1, 0.1];
+      screenScale = [0.12, 0.12, 0.12];
     } else {
       screenScale = [0.2, 0.2, 0.2];
     }
@@ -28,29 +28,16 @@ const Home = () => {
     return [screenScale, rotation];
   };
 
-  const adjustPlaneForScreenSize = () => {
-    let screenScale, screenPosition;
-
-    if (window.innerWidth < 768) {
-      screenScale = [1.5, 1.5, 1.5];
-      screenPosition = [0, -1.5, 0];
-    } else {
-      screenScale = [0.4, 0.4, 0.4];
-      screenPosition = [0, 0.3, 4];
-    }
-
-    return [screenScale, screenPosition];
-  };
-
-  const [planeScale, planePosition] = adjustPlaneForScreenSize();
   const [backgroundScale, backgroundRotation] = adjustBackground();
 
   const handlePrevStage = () => {
     setCurrentStage((prev) => (prev === 1 ? 4 : prev - 1));
+    setIsRotating(true);
   };
 
   const handleNextStage = () => {
     setCurrentStage((prev) => (prev === 4 ? 1 : prev + 1));
+    setIsRotating(true);
   };
 
   return (
@@ -59,6 +46,16 @@ const Home = () => {
         isRotating ? "cursor-grabbing" : "cursor-grab"
       }`}
     >
+      <div className="absolute top-1/2 left-4 z-10">
+        <button onClick={handlePrevStage} className="bg-white p-2 rounded-full">
+          &lt;
+        </button>
+      </div>
+      <div className="absolute top-1/2 right-4 z-10">
+        <button onClick={handleNextStage} className="bg-white p-2 rounded-full">
+          &gt;
+        </button>
+      </div>
       <div className="absolute bottom-6 left-0 right-0 z-10 flex items-center justify-center">
         {currentStage && (
           <Modal
@@ -87,15 +84,19 @@ const Home = () => {
             groundColor="#000000"
             intensity={1}
           />
-          <Plane
-            isRotating={isRotating}
-            position={planePosition}
-            rotation={[0, 20.1, 0]}
-            scale={planeScale}
-          />
+          <Plane isRotating={isRotating} />
           <Bird isRotating={isRotating} setIsRotating={setIsRotating} />
           <Robot
-            onClick={() => location.push("/about")}
+            rotation={backgroundRotation}
+            isRotating={isRotating}
+            setIsRotating={setIsRotating}
+          />
+          <Fox
+            rotation={backgroundRotation}
+            isRotating={isRotating}
+            setIsRotating={setIsRotating}
+          />
+          <Cactus
             rotation={backgroundRotation}
             isRotating={isRotating}
             setIsRotating={setIsRotating}

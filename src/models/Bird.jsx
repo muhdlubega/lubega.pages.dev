@@ -10,6 +10,22 @@ const Bird = ({ isRotating, setIsRotating }) => {
   const groupRef = useRef();
   const birdRef = useRef();
 
+  const adjustFoxForScreenSize = () => {
+    let screenScale, screenPosition;
+
+    if (window.innerWidth < 768) {
+      screenScale = [0.001, 0.001, 0.001];
+      screenPosition = [0, 0.5, 0];
+    } else {
+      screenScale = [0.002, 0.002, 0.002];
+      screenPosition = [0, 0.5, 0];
+    }
+
+    return [screenScale, screenPosition];
+  };
+
+  const [scale, position] = adjustFoxForScreenSize();
+
   const { scene, animations } = useGLTF(birdScene);
   const { actions } = useAnimations(animations, birdRef);
 
@@ -39,7 +55,7 @@ const Bird = ({ isRotating, setIsRotating }) => {
 
   return (
     <group ref={groupRef}>
-      <mesh ref={birdRef} position={[0, 0.5, 0]} scale={[0.002, 0.002, 0.002]}>
+      <mesh ref={birdRef} position={position} scale={scale}>
         <primitive object={scene} />
       </mesh>
     </group>

@@ -9,6 +9,22 @@ const Robot = ({ isRotating, setIsRotating, ...props }) => {
   const groupRef = useRef();
   const robotRef = useRef();
 
+  const adjustRobotForScreenSize = () => {
+    let screenScale, screenPosition;
+
+    if (window.innerWidth < 768) {
+      screenScale = [0.5, 0.5, 0.5];
+      screenPosition = [1.35, 0, 0.2];
+    } else {
+      screenScale = [0.9, 0.9, 0.9];
+      screenPosition = [2, 0.4, 0.2];
+    }
+
+    return [screenScale, screenPosition];
+  };
+
+  const [scale, position] = adjustRobotForScreenSize();
+
   const { scene, animations } = useGLTF(robotScene);
   const { actions } = useAnimations(animations, robotRef);
 
@@ -20,7 +36,7 @@ const Robot = ({ isRotating, setIsRotating, ...props }) => {
 
   return (
     <group {...props} ref={groupRef}>
-      <mesh ref={robotRef} position={[2, 0.4, 0.2]} scale={[0.9, 0.9, 0.9]}>
+      <mesh ref={robotRef} position={position} scale={scale}>
         <primitive rotation={[0, Math.PI / 3, 0]} object={scene} />
       </mesh>
     </group>
