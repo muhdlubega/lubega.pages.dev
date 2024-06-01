@@ -31,13 +31,13 @@ const Home = () => {
   const [backgroundScale, backgroundRotation] = adjustBackground();
 
   const handlePrevStage = () => {
-    setCurrentStage((prev) => (prev === 1 ? 4 : prev - 1));
-    setIsRotating(true);
+    // setCurrentStage((prev) => (prev === 1 ? 4 : prev - 1));
+    // setIsRotating(true);
   };
 
   const handleNextStage = () => {
-    setCurrentStage((prev) => (prev === 4 ? 1 : prev + 1));
-    setIsRotating(true);
+    // setCurrentStage((prev) => (prev === 4 ? 1 : prev + 1));
+    // setIsRotating(true);
   };
 
   return (

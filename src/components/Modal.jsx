@@ -24,7 +24,7 @@ const Modal = ({ currentStage, handlePrevStage, handleNextStage }) => {
           initial={{ y: -50, opacity: 0 }}
           animate={animationControls}
         >
-          <motion.h1 className="modal sm:leading-snug font-bold top-10 sm:text-2xl text-4xl relative text-center py-4 px-8 text-white mx-8 z-10">
+          <motion.h1 className="modal sm:leading-snug font-bold top-10 text-4xl relative text-center py-4 px-8 text-white mx-8 z-10">
             WELCOME TO THE MIRACULOUS WORLD OF LUBEGA.DEV
           </motion.h1>
           <motion.p className="text-white text-center info-box">
