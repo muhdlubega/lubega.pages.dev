@@ -5,7 +5,13 @@ import { useRotation } from "../utils/rotationUtils";
 
 import cactusScene from "../assets/cactus.glb";
 
-const Cactus = ({ isRotating, setIsRotating, ...props }) => {
+const Cactus = ({
+  isRotating,
+  setIsRotating,
+  scaleFactor,
+  positionFactor,
+  ...props
+}) => {
   const groupRef = useRef();
   const cactusRef = useRef();
 
@@ -13,11 +19,11 @@ const Cactus = ({ isRotating, setIsRotating, ...props }) => {
     let screenScale, screenPosition;
 
     if (window.innerWidth < 768) {
-      screenScale = [0.5, 0.5, 0.5];
+      screenScale = [scaleFactor * 0.5, scaleFactor * 0.5, scaleFactor * 0.5];
       screenPosition = [-1.9, 0.05, -0.066];
     } else {
-      screenScale = [1, 1, 1];
-      screenPosition = [-3.2, 0.5, -0.1];
+      screenScale = [scaleFactor * 1, scaleFactor * 1, scaleFactor * 1];
+      screenPosition = [positionFactor * -3.2, 0.5, positionFactor * -0.1];
     }
 
     return [screenScale, screenPosition];

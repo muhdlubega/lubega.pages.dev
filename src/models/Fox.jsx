@@ -5,7 +5,13 @@ import { useRotation } from "../utils/rotationUtils";
 
 import foxScene from "../assets/fox.glb";
 
-const Fox = ({ isRotating, setIsRotating, ...props }) => {
+const Fox = ({
+  isRotating,
+  setIsRotating,
+  scaleFactor,
+  positionFactor,
+  ...props
+}) => {
   const groupRef = useRef();
   const foxRef = useRef();
 
@@ -13,10 +19,10 @@ const Fox = ({ isRotating, setIsRotating, ...props }) => {
     let screenScale, screenPosition;
 
     if (window.innerWidth < 768) {
-      screenScale = [0.1, 0.1, 0.1];
+      screenScale = [scaleFactor * 0.1, scaleFactor * 0.1, scaleFactor * 0.1];
       screenPosition = [0.4, -0.5, 0.6];
     } else {
-      screenScale = [0.2, 0.2, 0.2];
+      screenScale = [scaleFactor * 0.2, scaleFactor * 0.2, scaleFactor * 0.2];
       screenPosition = [0.5, -0.6, 0.8];
     }
 

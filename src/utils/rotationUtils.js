@@ -6,6 +6,18 @@ export const useRotation = (isRotating, setIsRotating, groupRef) => {
   const lastX = useRef(0);
   const rotationSpeed = useRef(0);
 
+  const rotateLeft = useCallback(() => {
+    if (!isRotating) setIsRotating(true);
+    groupRef.current.rotation.y += 0.005 * Math.PI;
+    rotationSpeed.current = 3;
+  }, [groupRef, isRotating, setIsRotating]);
+
+  const rotateRight = useCallback(() => {
+    if (!isRotating) setIsRotating(true);
+    groupRef.current.rotation.y -= 0.005 * Math.PI;
+    rotationSpeed.current = -3;
+  }, [groupRef, isRotating, setIsRotating]);
+
   const handlePointerDown = useCallback(
     (event) => {
       event.stopPropagation();
@@ -134,4 +146,6 @@ export const useRotation = (isRotating, setIsRotating, groupRef) => {
     handleTouchEnd,
     handleTouchMove,
   ]);
+
+  return { rotateLeft, rotateRight };
 };

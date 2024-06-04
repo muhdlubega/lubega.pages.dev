@@ -5,7 +5,14 @@ import { useRotation } from "../utils/rotationUtils";
 
 import robotScene from "../assets/robot.glb";
 
-const Robot = ({ isRotating, setIsRotating, ...props }) => {
+const Robot = ({
+  isRotating,
+  setIsRotating,
+  scaleFactor,
+  currentStage,
+  positionFactor,
+  ...props
+}) => {
   const groupRef = useRef();
   const robotRef = useRef();
 
@@ -13,11 +20,14 @@ const Robot = ({ isRotating, setIsRotating, ...props }) => {
     let screenScale, screenPosition;
 
     if (window.innerWidth < 768) {
-      screenScale = [0.5, 0.5, 0.5];
+      screenScale = [scaleFactor * 0.5, scaleFactor * 0.5, scaleFactor * 0.5];
       screenPosition = [1.35, 0, 0.2];
     } else {
-      screenScale = [0.9, 0.9, 0.9];
-      screenPosition = [2, 0.4, 0.2];
+      screenScale = [scaleFactor * 0.9, scaleFactor * 0.9, scaleFactor * 0.9];
+      screenPosition =
+        // currentStage === 4
+        //   ? [3, 0, 0.4] :
+        [positionFactor * 2, positionFactor * 0.4, positionFactor * 0.2];
     }
 
     return [screenScale, screenPosition];
@@ -37,7 +47,7 @@ const Robot = ({ isRotating, setIsRotating, ...props }) => {
   return (
     <group {...props} ref={groupRef}>
       <mesh ref={robotRef} position={position} scale={scale}>
-        <primitive rotation={[0, Math.PI / 3, 0]} object={scene} />
+        <primitive rotation={[0, Math.PI / 2.5, 0]} object={scene} />
       </mesh>
     </group>
   );

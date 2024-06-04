@@ -3,7 +3,7 @@ import { motion, useAnimation } from "framer-motion";
 import { useEffect } from "react";
 import "./Modal.css";
 
-const Modal = ({ currentStage, handlePrevStage, handleNextStage }) => {
+const Modal = ({ currentStage }) => {
   const animationControls = useAnimation();
 
   useEffect(() => {
@@ -12,19 +12,13 @@ const Modal = ({ currentStage, handlePrevStage, handleNextStage }) => {
 
   return (
     <div className="flex items-center justify-center">
-      {/* <button
-        onClick={handlePrevStage}
-        className="bg-white border-none cursor-pointer p-2 mx-2 text-lg font-bold"
-      >
-        {"<"}
-      </button> */}
       {currentStage === 1 && (
         <motion.div
-          className="flex flex-col justify-center items-center mx-20"
+          className="flex flex-col justify-center items-center"
           initial={{ y: -50, opacity: 0 }}
           animate={animationControls}
         >
-          <motion.h1 className="modal sm:leading-snug font-bold top-10 text-4xl relative text-center py-4 px-8 text-white mx-8 z-10">
+          <motion.h1 className="modal sm:leading-snug font-bold top-9 text-[2rem] relative text-center py-4 px-8 text-white z-10">
             WELCOME TO THE MIRACULOUS WORLD OF LUBEGA.DEV
           </motion.h1>
           <motion.p className="text-white text-center info-box">
@@ -37,11 +31,11 @@ const Modal = ({ currentStage, handlePrevStage, handleNextStage }) => {
       {currentStage === 2 && (
         <Link to="/projects">
           <motion.div
-            className="flex flex-col justify-center items-center mx-20"
+            className="flex flex-col justify-center items-center"
             initial={{ y: -50, opacity: 0 }}
             animate={animationControls}
           >
-            <motion.h1 className="modal sm:leading-snug font-bold top-10 text-4xl relative text-center py-4 px-8 text-white mx-8 z-10">
+            <motion.h1 className="modal sm:leading-snug font-bold top-10 text-4xl relative text-center py-4 px-8 text-white z-10">
               PROJECTS
             </motion.h1>
             <motion.p className="text-white text-center info-box">
@@ -54,11 +48,11 @@ const Modal = ({ currentStage, handlePrevStage, handleNextStage }) => {
       {currentStage === 3 && (
         <Link to="/contact">
           <motion.div
-            className="flex flex-col justify-center items-center mx-20"
+            className="flex flex-col justify-center items-center"
             initial={{ y: -50, opacity: 0 }}
             animate={animationControls}
           >
-            <motion.h1 className="modal sm:leading-snug font-bold top-10 text-4xl relative text-center py-4 px-8 text-white mx-8 z-10">
+            <motion.h1 className="modal sm:leading-snug font-bold top-10 text-4xl relative text-center py-4 px-8 text-white z-10">
               LET&apos;S GET IN CONTACT
             </motion.h1>
             <motion.p className="text-white text-center info-box">
@@ -71,11 +65,11 @@ const Modal = ({ currentStage, handlePrevStage, handleNextStage }) => {
       {currentStage === 4 && (
         <Link to="/about">
           <motion.div
-            className="flex flex-col justify-center items-center mx-20"
+            className="flex flex-col justify-center items-center"
             initial={{ y: -50, opacity: 0 }}
             animate={animationControls}
           >
-            <motion.h1 className="modal sm:leading-snug font-bold top-10 text-4xl relative text-center py-4 px-8 text-white mx-8 z-10">
+            <motion.h1 className="modal sm:leading-snug font-bold top-10 text-4xl relative text-center py-4 px-8 text-white z-10">
               ABOUT ME
             </motion.h1>
             <motion.p className="text-white text-center info-box">
@@ -84,13 +78,6 @@ const Modal = ({ currentStage, handlePrevStage, handleNextStage }) => {
           </motion.div>
         </Link>
       )}
-
-      {/* <button
-        onClick={handleNextStage}
-        className="bg-white border-none cursor-pointer p-2 mx-2 text-lg font-bold"
-      >
-        {">"}
-      </button> */}
     </div>
   );
 };

@@ -1,7 +1,7 @@
 /* eslint-disable react/no-unknown-property */
 import { useRef } from "react";
 import { useGLTF } from "@react-three/drei";
-import { useSpring, animated, a } from "@react-spring/three";
+import { animated } from "@react-spring/three";
 import { useRotation } from "../utils/rotationUtils";
 
 import backgroundScene from "../assets/background.glb";
@@ -11,22 +11,18 @@ const Background = ({
   isRotating,
   setIsRotating,
   setCurrentStage,
-  currentStage,
+  setScaleFactor,
+  positionFactor,
+  setPositionFactor,
+  setShowPlane,
   ...props
 }) => {
   const backgroundRef = useRef();
-
   const rotationSpeed = useRef(0);
-  const dampingFactor = 0.1;
-
   const { nodes, materials } = useGLTF(backgroundScene);
 
-  // const { rotation } = useSpring({
-  //   rotation: [0, (currentStage - 1) * (Math.PI / 2), 0],
-  //   config: { tension: 200, friction: 30 },
-  // });
-
   useRotation(isRotating, setIsRotating, backgroundRef);
+  const dampingFactor = 0.1;
 
   useFrame(() => {
     if (!isRotating) {
@@ -46,18 +42,32 @@ const Background = ({
       switch (true) {
         case normalizedRotation >= 4.5 && normalizedRotation <= 5:
           setCurrentStage(4);
+          // setScaleFactor(2);
+          // setPositionFactor(3);
+          // setShowPlane(false);
           break;
         case normalizedRotation >= 5.5 && normalizedRotation <= 6.2:
           setCurrentStage(3);
+          // setScaleFactor(4);
+          // setPositionFactor(2);
+          // setShowPlane(false);
           break;
-        case normalizedRotation >= 0.9 && normalizedRotation <= 1.5:
+        case normalizedRotation >= 1.1 && normalizedRotation <= 1.8:
           setCurrentStage(2);
+          // setScaleFactor(1.5);
+          // setPositionFactor(1.2);
+          // setShowPlane(false);
           break;
         case normalizedRotation >= 2.6 && normalizedRotation <= 3.2:
           setCurrentStage(1);
+          setPositionFactor(1);
+          setShowPlane(true);
           break;
         default:
           setCurrentStage(null);
+          setScaleFactor(1);
+          setPositionFactor(1);
+          setShowPlane(true);
       }
     }
   });
@@ -66,12 +76,11 @@ const Background = ({
     <animated.group
       {...props}
       ref={backgroundRef}
-      position={[0, -0.7, -1]}
-      // rotation={rotation}
+      position={[0, positionFactor * -0.7, positionFactor * -1]}
     >
-      <a.group rotation={[Math.PI / 2, 0, -Math.PI]}>
-        <a.group rotation={[-Math.PI, 0, 0]} scale={0.01}>
-          <a.group rotation={[0, 0, -Math.PI / 2]} scale={100}>
+      <group rotation={[Math.PI / 2, 0, -Math.PI]}>
+        <group rotation={[-Math.PI, 0, 0]} scale={0.01}>
+          <group rotation={[0, 0, -Math.PI / 2]} scale={100}>
             <mesh
               geometry={nodes.characters_STONE_a_0.geometry}
               material={materials.STONE_a}
@@ -80,8 +89,8 @@ const Background = ({
               geometry={nodes.characters_STONE_a_0_1.geometry}
               material={materials.STONE_a}
             />
-          </a.group>
-          <a.group rotation={[0, 0, -Math.PI / 2]} scale={100}>
+          </group>
+          <group rotation={[0, 0, -Math.PI / 2]} scale={100}>
             <mesh
               geometry={nodes.characters007_bush_0.geometry}
               material={materials.bush}
@@ -90,7 +99,7 @@ const Background = ({
               geometry={nodes.characters007_bush_0_1.geometry}
               material={materials.bush}
             />
-          </a.group>
+          </group>
           <mesh
             geometry={nodes.characters001_charcters_0.geometry}
             material={materials.charcters}
@@ -145,8 +154,8 @@ const Background = ({
             rotation={[0, 0, -Math.PI / 2]}
             scale={100}
           />
-        </a.group>
-      </a.group>
+        </group>
+      </group>
     </animated.group>
   );
 };

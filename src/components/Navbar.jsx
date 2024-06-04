@@ -1,12 +1,15 @@
+import { GrContact, GrProjects, GrStatusInfo } from "react-icons/gr";
 import { NavLink } from "react-router-dom";
 
 const Navbar = () => {
+  const isMobile = window.innerWidth < 768;
+
   return (
     <header className="header">
       <NavLink
         to="/"
         className={({ isActive }) =>
-          isActive ? "text-yellow-600" : "text-black"
+          isActive ? "text-cyan-500" : "text-white"
         }
       >
         <h5>lubega.dev</h5>
@@ -15,18 +18,34 @@ const Navbar = () => {
         <NavLink
           to="/about"
           className={({ isActive }) =>
-            isActive ? "text-yellow-600" : "text-black"
+            isActive
+              ? "text-cyan-500 flex items-center gap-2"
+              : "text-white flex items-center gap-2"
           }
         >
-          About
+          <GrStatusInfo />
+          {!isMobile && "About"}
         </NavLink>
         <NavLink
           to="/projects"
           className={({ isActive }) =>
-            isActive ? "text-yellow-600" : "text-black"
+            isActive
+              ? "text-cyan-500 flex items-center gap-2"
+              : "text-white flex items-center gap-2"
           }
         >
-          Projects
+          <GrProjects />
+          {!isMobile && "Projects"}
+        </NavLink>
+        <NavLink
+          to="/contact"
+          className={({ isActive }) =>
+            isActive
+              ? "text-cyan-500 flex items-center gap-2"
+              : "text-white flex items-center gap-2"
+          }
+        >
+          <GrContact /> {!isMobile && "Contact"}
         </NavLink>
       </nav>
     </header>
