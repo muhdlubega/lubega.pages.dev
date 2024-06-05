@@ -80,6 +80,24 @@ export const projects = [
   },
   {
     theme: "btn-back-green",
+    iconUrl: ms,
+    name: "MgmtSys",
+    description:
+      "MgmtSys is a comprehensive management system dashboard featuring API integration, state management, data visualization, CRUD operations, performance optimization, and security measures and is written mainly in React Javascript and SCSS. It utilizes Firebase and Firestore as a database and authorization solution while also integrating data from the JSONPlaceholder API. The following documentation provides an overview of the project's features, dependencies, setup instructions, usage, deployment, and submission details.",
+    link: "https://mgmtsys.vercel.app/",
+    sourceCode: "https://github.com/muhdlubega/mgmt-sys-dashboard",
+  },
+  {
+    theme: "btn-back-green",
+    iconUrl: ck,
+    name: "CryptoKing",
+    description:
+      "A cryptocurrency watcher website I made for self-study. For this project, I worked with various libraries such as react-alice-carousel and react-chartjs alongside React, CSS, and Firebase to interact with the CoinGecko API. This project was made as a basis for understanding REST API calls and groundwork for WebSocket calls.",
+    link: "https://thecryptoking.vercel.app/",
+    sourceCode: "https://github.com/muhdlubega/crypto-king",
+  },
+  {
+    theme: "btn-back-green",
     iconUrl: cc,
     name: "CommonCents",
     description:
@@ -98,23 +116,6 @@ export const projects = [
   },
   {
     theme: "btn-back-green",
-    iconUrl: ms,
-    name: "MgmtSys",
-    description:
-      "MgmtSys is a comprehensive management system dashboard featuring API integration, state management, data visualization, CRUD operations, performance optimization, and security measures and is written mainly in React Javascript and SCSS. It utilizes Firebase and Firestore as a database and authorization solution while also integrating data from the JSONPlaceholder API. The following documentation provides an overview of the project's features, dependencies, setup instructions, usage, deployment, and submission details.",
-    link: "https://mgmtsys.vercel.app/",
-    sourceCode: "https://github.com/muhdlubega/mgmt-sys-dashboard",
-  },
-  {
-    theme: "btn-back-green",
-    iconUrl: lo,
-    name: "Lib.Org",
-    description:
-      "Lib.Org is a library organizer mobile app I made in a group of two for our mobile development hackathon in the Deriv BeSquare Graduate Programme. For the hackathon our goal was to utilize any open-source API to create an interactive mobile app in one week. Our team utilized mainly the Dart language and Flutter framework with various tools and widgets such as Firebase, Bloc, flutter_barcode_scanner and more to create this app using the Google Books API. This app allows user to perform various actions such as searching for book and e-book details, adding books to favourites and sorting them according to libraries, scanning barcode or entering existing ISBN number of physical books to be added into the organizer, toggling light or dark mode and more.",
-    sourceCode: "https://github.com/muhdlubega/library-organizer",
-  },
-  {
-    theme: "btn-back-green",
     iconUrl: vg,
     name: "Visual Gamer",
     description:
@@ -124,20 +125,19 @@ export const projects = [
   },
   {
     theme: "btn-back-green",
-    iconUrl: ck,
-    name: "CryptoKing",
-    description:
-      "A cryptocurrency watcher website I made for self-study. For this project, I worked with various libraries such as react-alice-carousel and react-chartjs alongside React, CSS, and Firebase to interact with the CoinGecko API. This project was made as a basis for understanding REST API calls and groundwork for WebSocket calls.",
-    link: "https://thecryptoking.vercel.app/",
-    sourceCode: "https://github.com/muhdlubega/crypto-king",
-  },
-  {
-    theme: "btn-back-green",
     iconUrl: ri,
     name: "Recommend.me",
     description:
       "Recommend.me is a TV Show database I made as my final project for the Harvard CS50 online course. For this project, I worked with the TMDB API to display data about TV shows through frameworks and tools such as React, JavaScript, and CSS. This was my introductory project to React, where I tried to familiarize myself with React Hooks.",
     link: "https://recommendme-livid.vercel.app/",
     sourceCode: "https://github.com/muhdlubega/recommendme",
+  },
+  {
+    theme: "btn-back-green",
+    iconUrl: lo,
+    name: "Lib.Org",
+    description:
+      "Lib.Org is a library organizer mobile app I made in a group of two for our mobile development hackathon in the Deriv BeSquare Graduate Programme. For the hackathon our goal was to utilize any open-source API to create an interactive mobile app in one week. Our team utilized mainly the Dart language and Flutter framework with various tools and widgets such as Firebase, Bloc, flutter_barcode_scanner and more to create this app using the Google Books API. This app allows user to perform various actions such as searching for book and e-book details, adding books to favourites and sorting them according to libraries, scanning barcode or entering existing ISBN number of physical books to be added into the organizer, toggling light or dark mode and more.",
+    sourceCode: "https://github.com/muhdlubega/library-organizer",
   },
 ];

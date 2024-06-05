@@ -1,6 +1,5 @@
 import emailjs from "@emailjs/browser";
 import { useRef, useState } from "react";
-
 import useAlert from "../hooks/useAlert";
 import Alert from "../components/Alert";
 import { FaGithub, FaInstagramSquare, FaLinkedin } from "react-icons/fa";
@@ -17,8 +16,41 @@ const Contact = () => {
     setForm({ ...form, [name]: value });
   };
 
+  const validateEmail = (email) => {
+    const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    return re.test(String(email).toLowerCase());
+  };
+
   const handleSubmit = (e) => {
     e.preventDefault();
+
+    if (!form.name.trim()) {
+      showAlert({
+        show: true,
+        text: "Please enter your name.",
+        type: "danger",
+      });
+      return;
+    }
+
+    if (!validateEmail(form.email)) {
+      showAlert({
+        show: true,
+        text: "Please enter a valid email address.",
+        type: "danger",
+      });
+      return;
+    }
+
+    if (!form.message.trim()) {
+      showAlert({
+        show: true,
+        text: "Please enter your message.",
+        type: "danger",
+      });
+      return;
+    }
+
     setLoading(true);
 
     emailjs
@@ -39,7 +71,7 @@ const Contact = () => {
           setLoading(false);
           showAlert({
             show: true,
-            text: "Thank you for your message 😃",
+            text: "Message received :D",
             type: "success",
           });
 
@@ -50,7 +82,7 @@ const Contact = () => {
               email: "",
               message: "",
             });
-          }, [3000]);
+          }, 3000);
         },
         (error) => {
           setLoading(false);
@@ -58,7 +90,7 @@ const Contact = () => {
 
           showAlert({
             show: true,
-            text: "I didn't receive your message 😢",
+            text: "Error in sending message :( Please try again",
             type: "danger",
           });
         }
@@ -155,6 +187,7 @@ const Contact = () => {
               rows="4"
               className="textarea"
               placeholder="Write your thoughts here..."
+              required
               value={form.message}
               onChange={handleChange}
             />

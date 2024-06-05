@@ -23,22 +23,22 @@ import {
 
 const Carousel = () => {
   const logos = [
-    { src: <FaGitAlt color="teal" size={48} />, alt: "Git" },
-    { src: <FaReact color="teal" size={48} />, alt: "React" },
-    { src: <SiTypescript color="teal" size={48} />, alt: "TypeScript" },
-    { src: <SiJavascript color="teal" size={48} />, alt: "JavaScript" },
-    { src: <SiMobx color="teal" size={48} />, alt: "MobX" },
-    { src: <SiJest color="teal" size={48} />, alt: "Jest" },
-    { src: <SiCypress color="teal" size={48} />, alt: "Cypress.io" },
-    { src: <FaPython color="teal" size={48} />, alt: "Python" },
-    { src: <FaHtml5 color="teal" size={48} />, alt: "HTML" },
-    { src: <FaCss3Alt color="teal" size={48} />, alt: "CSS" },
-    { src: <SiTailwindcss color="teal" size={48} />, alt: "TailwindCSS" },
-    { src: <FaSass color="teal" size={48} />, alt: "SASS" },
-    { src: <SiDart color="teal" size={48} />, alt: "Dart" },
-    { src: <SiFlutter color="teal" size={48} />, alt: "Flutter" },
-    { src: <BiLogoPostgresql color="teal" size={48} />, alt: "PostgreSQL" },
-    { src: <FaNodeJs color="teal" size={48} />, alt: "NodeJS" },
+    { src: <FaGitAlt color="cyan" size={48} />, alt: "Git" },
+    { src: <FaReact color="cyan" size={48} />, alt: "React" },
+    { src: <SiTypescript color="cyan" size={48} />, alt: "TypeScript" },
+    { src: <SiJavascript color="cyan" size={48} />, alt: "JavaScript" },
+    { src: <SiMobx color="cyan" size={48} />, alt: "MobX" },
+    { src: <SiJest color="cyan" size={48} />, alt: "Jest" },
+    { src: <SiCypress color="cyan" size={48} />, alt: "Cypress.io" },
+    { src: <FaPython color="cyan" size={48} />, alt: "Python" },
+    { src: <FaHtml5 color="cyan" size={48} />, alt: "HTML" },
+    { src: <FaCss3Alt color="cyan" size={48} />, alt: "CSS" },
+    { src: <SiTailwindcss color="cyan" size={48} />, alt: "TailwindCSS" },
+    { src: <FaSass color="cyan" size={48} />, alt: "SASS" },
+    { src: <SiDart color="cyan" size={48} />, alt: "Dart" },
+    { src: <SiFlutter color="cyan" size={48} />, alt: "Flutter" },
+    { src: <BiLogoPostgresql color="cyan" size={48} />, alt: "PostgreSQL" },
+    { src: <FaNodeJs color="cyan" size={48} />, alt: "NodeJS" },
   ];
   const items = logos.map((logo, index) => {
     return (
