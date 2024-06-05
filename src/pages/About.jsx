@@ -7,6 +7,7 @@ import { experiences } from "../constants";
 
 import "react-vertical-timeline-component/style.min.css";
 import Carousel from "../components/Carousel";
+import { FaFileDownload } from "react-icons/fa";
 
 const About = () => {
   return (
@@ -84,6 +85,16 @@ const About = () => {
             ))}
           </VerticalTimeline>
         </div>
+      </div>
+      <div className="py-10 flex justify-center">
+        <a
+          href="/MuhammadLubega.pdf"
+          download
+          className="flex justify-center items-center gap-2 font-semibold w-full mx-6 bg-gradient-to-r from-[#00c6ff] hover:from-[#06b6d4] to-[#155E75] hover:to-[#45cff6] text-white p-4 rounded"
+        >
+          <FaFileDownload size={20} />
+          Download My Resume
+        </a>
       </div>
     </section>
   );
