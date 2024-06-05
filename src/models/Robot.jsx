@@ -10,7 +10,6 @@ const Robot = ({
   setIsRotating,
   scaleFactor,
   currentStage,
-  positionFactor,
   ...props
 }) => {
   const groupRef = useRef();
@@ -21,13 +20,10 @@ const Robot = ({
 
     if (window.innerWidth < 768) {
       screenScale = [scaleFactor * 0.5, scaleFactor * 0.5, scaleFactor * 0.5];
-      screenPosition = [1.35, 0, 0.2];
+      screenPosition = currentStage === 4 ? [2.6, 0.5, 0.4] : [1.35, 0, 0.2];
     } else {
       screenScale = [scaleFactor * 0.9, scaleFactor * 0.9, scaleFactor * 0.9];
-      screenPosition =
-        // currentStage === 4
-        //   ? [3, 0, 0.4] :
-        [positionFactor * 2, positionFactor * 0.4, positionFactor * 0.2];
+      screenPosition = currentStage === 4 ? [3, 0, 0.4] : [2, 0.4, 0.2];
     }
 
     return [screenScale, screenPosition];
@@ -47,7 +43,9 @@ const Robot = ({
   return (
     <group {...props} ref={groupRef}>
       <mesh ref={robotRef} position={position} scale={scale}>
-        <primitive rotation={[0, Math.PI / 2.5, 0]} object={scene} />
+        {currentStage !== 3 && (
+          <primitive rotation={[0, Math.PI / 2.5, 0]} object={scene} />
+        )}
       </mesh>
     </group>
   );

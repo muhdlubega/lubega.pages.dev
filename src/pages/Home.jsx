@@ -10,7 +10,7 @@ import Robot from "../models/Robot";
 import Plane from "../models/Plane";
 import Fox from "../models/Fox";
 import Cactus from "../models/Cactus";
-import { FaChevronCircleLeft, FaChevronCircleRight } from "react-icons/fa";
+// import { FaChevronCircleLeft, FaChevronCircleRight } from "react-icons/fa";
 
 const Home = () => {
   const [isRotating, setIsRotating] = useState(false);
@@ -38,14 +38,14 @@ const Home = () => {
 
   const [backgroundScale, backgroundRotation] = adjustBackground();
 
-  const handleRotateLeft = () => {};
+  // const handleRotateLeft = () => {};
 
-  const handleRotateRight = () => {};
+  // const handleRotateRight = () => {};
 
   return (
     <section className="w-full h-screen relative">
       <div className="z-10 w-full">
-        <div className="absolute top-1/2 left-4 z-10">
+        {/* <div className="absolute top-1/2 left-4 z-10">
           <button
             onClick={handleRotateLeft}
             className="bg-transparent p-2 rounded-full hover:bg-teal-500"
@@ -60,7 +60,7 @@ const Home = () => {
           >
             <FaChevronCircleRight color="white" size={28} />
           </button>
-        </div>
+        </div> */}
         <div className="absolute bottom-6 left-0 right-0 z-10 flex items-center justify-center">
           {currentStage && <Modal currentStage={currentStage} />}
         </div>
@@ -87,13 +87,9 @@ const Home = () => {
             intensity={1}
           />
           {showPlane && <Plane isRotating={isRotating} />}
-          <Bird isRotating={isRotating} setIsRotating={setIsRotating} />
-          <Robot
-            rotation={backgroundRotation}
+          <Bird
             isRotating={isRotating}
             setIsRotating={setIsRotating}
-            scaleFactor={scaleFactor}
-            positionFactor={positionFactor}
             currentStage={currentStage}
           />
           <Fox
@@ -102,13 +98,22 @@ const Home = () => {
             setIsRotating={setIsRotating}
             scaleFactor={scaleFactor}
             positionFactor={positionFactor}
+            currentStage={currentStage}
+          />
+          <Robot
+            rotation={backgroundRotation}
+            isRotating={isRotating}
+            setIsRotating={setIsRotating}
+            scaleFactor={scaleFactor}
+            positionFactor={positionFactor}
+            currentStage={currentStage}
           />
           <Cactus
             rotation={backgroundRotation}
             isRotating={isRotating}
             setIsRotating={setIsRotating}
             scaleFactor={scaleFactor}
-            positionFactor={positionFactor}
+            currentStage={currentStage}
           />
           <Sky isRotating={isRotating} />
           <Background

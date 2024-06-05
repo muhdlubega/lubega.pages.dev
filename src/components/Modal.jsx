@@ -19,11 +19,11 @@ const Modal = ({ currentStage }) => {
           animate={animationControls}
         >
           <motion.h1 className="modal sm:leading-snug font-bold top-9 text-[2rem] relative text-center py-4 px-8 text-white z-10">
-            WELCOME TO THE MIRACULOUS WORLD OF LUBEGA.DEV
+            WELCOME TO LUBEGA.DEV
           </motion.h1>
           <motion.p className="text-white text-center info-box">
-            Hi, I am Lubega! A passionate Frontend React Developer based in
-            Kuala Lumpur, Malaysia. Get to know me here
+            Check out the miraculous world of lubega.dev. Take a spin and talk
+            to the fellow inhabitants to learn more!
           </motion.p>
         </motion.div>
       )}
@@ -73,7 +73,7 @@ const Modal = ({ currentStage }) => {
               ABOUT ME
             </motion.h1>
             <motion.p className="text-white text-center info-box">
-              Find out more about my skills, achievements and tech stack here
+              Find out more about my skills and experiences here
             </motion.p>
           </motion.div>
         </Link>

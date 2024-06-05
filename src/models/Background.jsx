@@ -40,23 +40,23 @@ const Background = ({
         ((rotation % (2 * Math.PI)) + 2 * Math.PI) % (2 * Math.PI);
 
       switch (true) {
-        case normalizedRotation >= 4.5 && normalizedRotation <= 5:
+        case normalizedRotation >= 4.7 && normalizedRotation <= 5.1:
           setCurrentStage(4);
-          // setScaleFactor(2);
-          // setPositionFactor(3);
-          // setShowPlane(false);
+          setScaleFactor(2);
+          setPositionFactor(window.innerWidth < 768 ? 1.2 : 3);
+          setShowPlane(false);
           break;
-        case normalizedRotation >= 5.5 && normalizedRotation <= 6.2:
+        case normalizedRotation >= 5.7 && normalizedRotation <= 6.1:
           setCurrentStage(3);
-          // setScaleFactor(4);
-          // setPositionFactor(2);
-          // setShowPlane(false);
+          setScaleFactor(4);
+          setPositionFactor(2);
+          setShowPlane(false);
           break;
-        case normalizedRotation >= 1.1 && normalizedRotation <= 1.8:
+        case normalizedRotation >= 1.5 && normalizedRotation <= 1.7:
           setCurrentStage(2);
-          // setScaleFactor(1.5);
-          // setPositionFactor(1.2);
-          // setShowPlane(false);
+          setScaleFactor(window.innerWidth < 768 ? 2.2 : 1.5);
+          setPositionFactor(1.2);
+          setShowPlane(false);
           break;
         case normalizedRotation >= 2.6 && normalizedRotation <= 3.2:
           setCurrentStage(1);

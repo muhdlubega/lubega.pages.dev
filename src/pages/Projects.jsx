@@ -1,14 +1,14 @@
 import { Link } from "react-router-dom";
 
 import { projects } from "../constants";
-import { FaDoorOpen } from "react-icons/fa";
+import { FaDoorOpen, FaGithub } from "react-icons/fa";
 
 const Projects = () => {
   return (
     <section className="max-container">
       <h1 className="head-text">My Projects</h1>
 
-      <p className="text-slate-500 mt-2 leading-relaxed">
+      <p className="text-slate-400 mt-2 leading-relaxed">
         I&apos;ve embarked on numerous projects throughout the years, but these
         are the ones I hold closest to my heart. Many of them are open-source,
         so if you come across something that piques your interest, feel free to
@@ -31,19 +31,36 @@ const Projects = () => {
               <h4 className="text-2xl text-white font-semibold">
                 {project.name}
               </h4>
-              <p className="mt-2 text-sm text-slate-500">
+              <p className="mt-2 text-sm text-slate-400">
                 {project.description}
               </p>
-              <div className="mt-5 flex items-center gap-2 font-poppins">
-                <Link
-                  to={project.link}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="flex gap-2 items-center font-semibold text-cyan-600 hover:text-cyan-500"
-                >
-                  <FaDoorOpen size={24} />
-                  Open Website
-                </Link>
+              <div className="flex flex-row gap-4">
+                {project.link && (
+                  <div className="mt-5 flex items-center gap-2">
+                    <Link
+                      to={project.link}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="flex gap-2 items-center font-semibold text-cyan-600 hover:text-cyan-500"
+                    >
+                      <FaDoorOpen size={24} />
+                      Open Website
+                    </Link>
+                  </div>
+                )}
+                {project.sourceCode && (
+                  <div className="mt-5 flex items-center gap-2">
+                    <Link
+                      to={project.sourceCode}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="flex gap-2 items-center font-semibold text-cyan-600 hover:text-cyan-500"
+                    >
+                      <FaGithub size={24} />
+                      Source Code
+                    </Link>
+                  </div>
+                )}
               </div>
             </div>
           </div>

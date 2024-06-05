@@ -7,7 +7,7 @@
 :root {
   --blue-rgb: 237 245 255;
   --green-rgb: 125 161 35;
-  background-color:  #0F172A;
+  background:  linear-gradient(20deg,#0F172A 60%, #09323e 100%);
 }
 
 body {
@@ -24,7 +24,7 @@ body:has(.card[data-color="green"]:hover) {
 
 @layer utilities {
   .max-container {
-    @apply max-w-5xl mx-auto sm:p-16 pb-12 !pt-[126px] px-8 min-h-[calc(100vh-80px)];
+    @apply max-w-5xl mx-auto sm:p-16 pb-12 !pt-[126px] px-8 min-h-[100vh];
   }
 
   .head-text {
@@ -40,11 +40,11 @@ body:has(.card[data-color="green"]:hover) {
   }
 
   .input {
-    @apply bg-slate-900 border border-gray-200 text-slate-500 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 mt-2.5 font-normal shadow-card;
+    @apply bg-slate-900 border border-gray-200 text-slate-400 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 mt-2.5 font-normal shadow-card;
   }
 
   .textarea {
-    @apply block p-2.5 w-full text-sm text-slate-500 bg-slate-900 rounded-lg border border-gray-200 focus:ring-blue-500 focus:border-blue-500 mt-2.5 font-normal shadow-card;
+    @apply block p-2.5 w-full text-sm text-slate-400 bg-slate-900 rounded-lg border border-gray-200 focus:ring-blue-500 focus:border-blue-500 mt-2.5 font-normal shadow-card;
   }
 
   .btn {

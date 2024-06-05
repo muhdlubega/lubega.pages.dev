@@ -6,7 +6,7 @@ import { useFrame } from "@react-three/fiber";
 
 import birdScene from "../assets/bird.glb";
 
-const Bird = ({ isRotating, setIsRotating }) => {
+const Bird = ({ isRotating, setIsRotating, currentStage }) => {
   const groupRef = useRef();
   const birdRef = useRef();
 
@@ -56,7 +56,7 @@ const Bird = ({ isRotating, setIsRotating }) => {
   return (
     <group ref={groupRef}>
       <mesh ref={birdRef} position={position} scale={scale}>
-        <primitive object={scene} />
+        {currentStage !== 3 && <primitive object={scene} />}
       </mesh>
     </group>
   );

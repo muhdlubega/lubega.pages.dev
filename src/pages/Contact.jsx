@@ -66,7 +66,7 @@ const Contact = () => {
   };
 
   return (
-    <section className="relative flex lg:flex-row flex-col max-container">
+    <section className="relative flex lg:flex-row flex-col max-container h-full">
       {alert.show && <Alert {...alert} />}
 
       <div className="flex-1 min-w-[50%] flex flex-col">
@@ -114,7 +114,7 @@ const Contact = () => {
           </button>
         </div>
         <h1 className="head-text">Let&apos;s Get in Contact!</h1>
-        <p className="text-slate-500">
+        <p className="text-slate-400">
           If you are interested to connect and learn more about me send me an
           email down below or in one of the socials listed above. Thank you for
           visiting Lubega.dev :)

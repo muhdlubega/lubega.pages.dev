@@ -3,7 +3,7 @@ import {
   VerticalTimelineElement,
 } from "react-vertical-timeline-component";
 
-import { experiences, skills } from "../constants";
+import { experiences } from "../constants";
 
 import "react-vertical-timeline-component/style.min.css";
 import Carousel from "../components/Carousel";
@@ -13,7 +13,7 @@ const About = () => {
     <section className="max-container">
       <h1 className="head-text">Hello, my name is Lubega</h1>
 
-      <div className="mt-5 flex flex-col gap-3 text-slate-500">
+      <div className="mt-5 flex flex-col gap-3 text-slate-400">
         <p>
           I am a creative and detail-oriented person with passion in programming
           and engineering. I am always open to learning new things and
@@ -37,7 +37,7 @@ const About = () => {
 
       <div className="py-16">
         <h3 className="subhead-text">Experience</h3>
-        <div className="mt-5 flex flex-col gap-3 text-slate-500">
+        <div className="mt-5 flex flex-col gap-3 text-slate-400">
           <p>
             I&apos;ve spent my time in this industry collecting experience to
             further improve myself in the field. Here&apos;s the rundown:
@@ -48,9 +48,9 @@ const About = () => {
           <VerticalTimeline>
             {experiences.map((experience) => (
               <VerticalTimelineElement
-                key={experience.company_name}
+                key={experience.id}
                 date={experience.date}
-                dateClassName="text-slate-500"
+                dateClassName="text-slate-400"
                 contentStyle={{
                   borderBottom: "8px",
                   borderStyle: "solid",
@@ -59,7 +59,7 @@ const About = () => {
                 }}
               >
                 <div>
-                  <h3 className="text-cyan-500 text-xl font-poppins font-semibold">
+                  <h3 className="text-cyan-500 text-xl font-semibold">
                     {experience.title}
                   </h3>
                   <p

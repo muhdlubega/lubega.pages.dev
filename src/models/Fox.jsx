@@ -9,7 +9,7 @@ const Fox = ({
   isRotating,
   setIsRotating,
   scaleFactor,
-  positionFactor,
+  currentStage,
   ...props
 }) => {
   const groupRef = useRef();
@@ -23,7 +23,7 @@ const Fox = ({
       screenPosition = [0.4, -0.5, 0.6];
     } else {
       screenScale = [scaleFactor * 0.2, scaleFactor * 0.2, scaleFactor * 0.2];
-      screenPosition = [0.5, -0.6, 0.8];
+      screenPosition = currentStage === 4 ? [0.3, -1.8, 1.2] : [0.5, -0.6, 0.8];
     }
 
     return [screenScale, screenPosition];
