@@ -1,5 +1,5 @@
 /* eslint-disable react/no-unknown-property */
-import { Suspense, useState } from "react";
+import { Suspense, useEffect, useState } from "react";
 import { Canvas } from "@react-three/fiber";
 import Loader from "../components/Loader";
 import Modal from "../components/Modal";
@@ -10,6 +10,7 @@ import Robot from "../models/Robot";
 import Plane from "../models/Plane";
 import Fox from "../models/Fox";
 import Cactus from "../models/Cactus";
+import swipe from "../assets/swipe.svg";
 // import { FaChevronCircleLeft, FaChevronCircleRight } from "react-icons/fa";
 
 const Home = () => {
@@ -18,6 +19,23 @@ const Home = () => {
   const [currentStage, setCurrentStage] = useState(1);
   const [scaleFactor, setScaleFactor] = useState(1);
   const [positionFactor, setPositionFactor] = useState(1);
+  const [showSwipeOverlay, setShowSwipeOverlay] = useState(true);
+
+  useEffect(() => {
+    const hasVisited = localStorage.getItem("hasVisited");
+    if (!hasVisited) {
+      setShowSwipeOverlay(true);
+      localStorage.setItem("hasVisited", "true");
+    } else {
+      setShowSwipeOverlay(false);
+    }
+
+    const timer = setTimeout(() => {
+      setShowSwipeOverlay(false);
+    }, 2000);
+
+    return () => clearTimeout(timer);
+  }, []);
 
   const adjustBackground = () => {
     let screenScale = null;
@@ -44,6 +62,14 @@ const Home = () => {
 
   return (
     <section className="w-full h-screen relative">
+      {showSwipeOverlay && (
+        <div className="absolute backdrop-blur-sm inset-0 z-20 flex flex-col text-center items-center justify-center bg-black bg-opacity-20">
+          <img src={swipe} alt="Swipe" className="w-96" />
+          <p className="text-white text-4xl mx-4 font-semibold">
+            Swipe left and right to interact with the characters
+          </p>
+        </div>
+      )}
       <div className="z-10 w-full">
         {/* <div className="absolute top-1/2 left-4 z-10">
           <button
