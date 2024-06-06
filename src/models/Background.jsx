@@ -52,9 +52,9 @@ const Background = ({
           setPositionFactor(2);
           setShowPlane(false);
           break;
-        case normalizedRotation >= 1.5 && normalizedRotation <= 1.7:
+        case normalizedRotation >= 1.45 && normalizedRotation <= 1.8:
           setCurrentStage(2);
-          setScaleFactor(window.innerWidth < 768 ? 2.2 : 1.5);
+          setScaleFactor(window.innerWidth < 768 ? 2 : 1.4);
           setPositionFactor(1.2);
           setShowPlane(false);
           break;

@@ -6,7 +6,7 @@ import { useFrame } from "@react-three/fiber";
 
 import birdScene from "../assets/bird.glb";
 
-const Bird = ({ isRotating, setIsRotating, currentStage }) => {
+const Bird = ({ isRotating, setIsRotating, currentStage, scaleFactor }) => {
   const groupRef = useRef();
   const birdRef = useRef();
 
@@ -14,10 +14,18 @@ const Bird = ({ isRotating, setIsRotating, currentStage }) => {
     let screenScale, screenPosition;
 
     if (window.innerWidth < 768) {
-      screenScale = [0.001, 0.001, 0.001];
+      screenScale = [
+        scaleFactor * 0.001,
+        scaleFactor * 0.001,
+        scaleFactor * 0.001,
+      ];
       screenPosition = [0, 0.5, 0];
     } else {
-      screenScale = [0.002, 0.002, 0.002];
+      screenScale = [
+        scaleFactor * 0.002,
+        scaleFactor * 0.002,
+        scaleFactor * 0.002,
+      ];
       screenPosition = [0, 0.5, 0];
     }
 

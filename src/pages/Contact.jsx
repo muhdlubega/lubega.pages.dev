@@ -5,6 +5,7 @@ import Alert from "../components/Alert";
 import { FaGithub, FaInstagramSquare, FaLinkedin } from "react-icons/fa";
 import { IoLogoWhatsapp } from "react-icons/io";
 import { MdEmail } from "react-icons/md";
+import Credits from "../components/Credits";
 
 const Contact = () => {
   const formRef = useRef();
@@ -198,6 +199,7 @@ const Contact = () => {
           </button>
         </form>
       </div>
+      <Credits />
     </section>
   );
 };

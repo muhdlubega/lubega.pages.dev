@@ -21,11 +21,11 @@ const Cactus = ({
     if (window.innerWidth < 768) {
       screenScale = [scaleFactor * 0.5, scaleFactor * 0.5, scaleFactor * 0.5];
       screenPosition =
-        currentStage === 2 ? [-4.1, 0.8, -0.16] : [-1.9, 0.05, -0.066];
+        currentStage === 2 ? [-3.7, 0.6, -0.14] : [-1.9, 0.05, -0.066];
     } else {
       screenScale = [scaleFactor * 1, scaleFactor * 1, scaleFactor * 1];
       screenPosition =
-        currentStage === 2 ? [-4.3, 0.8, -0.1] : [-3.15, 0.5, -0.1];
+        currentStage === 2 ? [-4.25, 0.75, -0.15] : [-3.15, 0.5, -0.1];
     }
 
     return [screenScale, screenPosition];

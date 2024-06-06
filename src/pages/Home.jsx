@@ -32,7 +32,7 @@ const Home = () => {
 
     const timer = setTimeout(() => {
       setShowSwipeOverlay(false);
-    }, 2000);
+    }, 3000);
 
     return () => clearTimeout(timer);
   }, []);
@@ -63,7 +63,7 @@ const Home = () => {
   return (
     <section className="w-full h-screen relative">
       {showSwipeOverlay && (
-        <div className="absolute backdrop-blur-sm inset-0 z-20 flex flex-col text-center items-center justify-center bg-black bg-opacity-20">
+        <div className="absolute backdrop-blur-md inset-0 z-20 flex flex-col text-center items-center justify-center bg-black bg-opacity-60">
           <img src={swipe} alt="Swipe" className="w-96" />
           <p className="text-white text-4xl mx-4 font-semibold">
             Swipe left and right to interact with the characters
@@ -116,6 +116,7 @@ const Home = () => {
           <Bird
             isRotating={isRotating}
             setIsRotating={setIsRotating}
+            scaleFactor={scaleFactor}
             currentStage={currentStage}
           />
           <Fox
