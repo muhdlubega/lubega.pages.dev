@@ -194,7 +194,7 @@ const Contact = () => {
             />
           </label>
 
-          <button type="submit" disabled={loading} className="btn">
+          <button type="submit" disabled={loading} className="btn mb-32">
             {loading ? "Sending..." : "Submit"}
           </button>
         </form>
