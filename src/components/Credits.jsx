@@ -1,6 +1,19 @@
+import { useAnimation, motion } from "framer-motion";
+import { useEffect } from "react";
+
 const Credits = () => {
+  const animationControls = useAnimation();
+
+  useEffect(() => {
+    animationControls.start({ y: 0, opacity: 1, transition: { duration: 1 } });
+  }, [animationControls]);
+
   return (
-    <div className="absolute ml-4 bottom-4 right-4 bg-slate-800 p-4 rounded-lg shadow-lg">
+    <motion.div
+      initial={{ y: -100, opacity: 0 }}
+      animate={animationControls}
+      className="absolute ml-4 bottom-4 right-4 bg-slate-800 p-4 rounded-lg shadow-lg"
+    >
       <p className="text-slate-500 text-sm">
         Credits to{" "}
         <a
@@ -58,7 +71,7 @@ const Credits = () => {
         </a>{" "}
         from Sketchfab for the 3D models :)
       </p>
-    </div>
+    </motion.div>
   );
 };
 

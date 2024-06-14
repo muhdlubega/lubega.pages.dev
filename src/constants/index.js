@@ -29,7 +29,7 @@ export const experiences = [
     company_name: "Harvard edX",
     date: "July 2022 - December 2022",
     points: [
-      "Completed the introductory course to learn about the basics of programming via HTML, C and Python and venturing deeper via languages/frameworks such as Javascript, SQL and React",
+      "Completed the introductory course to learn about the basics of programming via HTML, C and Python and venturing deeper via languages/frameworks such as Javascript, SQL and React.",
     ],
   },
   {
@@ -56,6 +56,15 @@ export const experiences = [
   },
   {
     id: 4,
+    title: "Javascript Foundations Professional Certificate",
+    company_name: "Mozilla Developer Network",
+    date: "June 2024",
+    points: [
+      "Awarded the professional certificate from Mozilla for JavaScript foundations in LinkedIn Learning after completing the learning path and scoring 98% in the assessment exam.",
+    ],
+  },
+  {
+    id: 5,
     title: "Frontend Developer",
     company_name: "Deriv",
     date: "August 2023 - Present",

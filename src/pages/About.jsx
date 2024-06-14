@@ -8,13 +8,31 @@ import { experiences } from "../constants";
 import "react-vertical-timeline-component/style.min.css";
 import Carousel from "../components/Carousel";
 import { FaFileDownload } from "react-icons/fa";
+import { useEffect } from "react";
+import { useAnimation, motion } from "framer-motion";
 
 const About = () => {
+  const animationControls = useAnimation();
+
+  useEffect(() => {
+    animationControls.start({ y: 0, opacity: 1, transition: { duration: 1 } });
+  }, [animationControls]);
+
   return (
     <section className="max-container">
-      <h1 className="head-text">Hello, my name is Lubega</h1>
+      <motion.h1
+        initial={{ y: -20, opacity: 0 }}
+        animate={animationControls}
+        className="head-text"
+      >
+        Hello, my name is Lubega
+      </motion.h1>
 
-      <div className="mt-5 flex flex-col gap-3 text-slate-400">
+      <motion.div
+        initial={{ y: -40, opacity: 0 }}
+        animate={animationControls}
+        className="mt-5 flex flex-col gap-3 text-slate-400"
+      >
         <p>
           I am a creative and detail-oriented person with passion in programming
           and engineering. I am always open to learning new things and
@@ -28,15 +46,23 @@ const About = () => {
           on new features and user stories. I am also tasked in assisting the QA
           automation of the team by incorporating e2e tests via Cypress.io.
         </p>
-      </div>
+      </motion.div>
 
-      <div className="py-10 flex flex-col">
+      <motion.div
+        initial={{ y: -60, opacity: 0 }}
+        animate={animationControls}
+        className="py-10 flex flex-col"
+      >
         <h3 className="subhead-text">My Skills</h3>
 
         <Carousel />
-      </div>
+      </motion.div>
 
-      <div className="py-16">
+      <motion.div
+        initial={{ y: -80, opacity: 0 }}
+        animate={animationControls}
+        className="py-16"
+      >
         <h3 className="subhead-text">Experience</h3>
         <div className="mt-5 flex flex-col gap-3 text-slate-400">
           <p>
@@ -85,17 +111,21 @@ const About = () => {
             ))}
           </VerticalTimeline>
         </div>
-      </div>
-      <div className="py-10 flex justify-center">
+      </motion.div>
+      <motion.div
+        initial={{ y: -100, opacity: 0 }}
+        animate={animationControls}
+        className="py-10 flex justify-center"
+      >
         <a
           href="/MuhammadLubega.pdf"
           download
-          className="flex justify-center items-center gap-2 font-semibold w-full mx-6 bg-gradient-to-r from-[#00c6ff] hover:from-[#06b6d4] to-[#155E75] hover:to-[#45cff6] text-white p-4 rounded"
+          className="flex justify-center items-center gap-2 font-semibold w-full mx-6 bg-gradient-to-r from-[#00C6ff] hover:from-[#104f62] to-[#155E75] hover:to-[#00c8ff69] text-white p-4 rounded"
         >
           <FaFileDownload size={20} />
           Download My Resume
         </a>
-      </div>
+      </motion.div>
     </section>
   );
 };

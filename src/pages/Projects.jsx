@@ -2,23 +2,46 @@ import { Link } from "react-router-dom";
 
 import { projects } from "../constants";
 import { FaDoorOpen, FaGithub } from "react-icons/fa";
+import { useEffect } from "react";
+import { motion, useAnimation } from "framer-motion";
 
 const Projects = () => {
+  const animationControls = useAnimation();
+
+  useEffect(() => {
+    animationControls.start({ y: 0, opacity: 1, transition: { duration: 1 } });
+  }, [animationControls]);
+
   return (
     <section className="max-container">
-      <h1 className="head-text">My Projects</h1>
+      <motion.h1
+        initial={{ y: -20, opacity: 0 }}
+        animate={animationControls}
+        className="head-text"
+      >
+        My Projects
+      </motion.h1>
 
-      <p className="text-slate-400 mt-2 leading-relaxed">
+      <motion.p
+        initial={{ y: -40, opacity: 0 }}
+        animate={animationControls}
+        className="text-slate-400 mt-2 leading-relaxed"
+      >
         I&apos;ve embarked on numerous projects throughout the years, but these
         are the ones I hold closest to my heart. Many of them are open-source,
         so if you come across something that piques your interest, feel free to
         explore the codebase and contribute your ideas for further enhancements.
         Your collaboration is highly valued!
-      </p>
+      </motion.p>
 
       <div className="flex flex-wrap my-20 gap-16">
         {projects.map((project) => (
-          <div className="lg:w-[400px] w-full" key={project.name}>
+          <motion.div
+            initial={{ y: -60, opacity: 0 }}
+            animate={animationControls}
+            className="lg:w-[400px] w-full"
+            key={project.name}
+          >
             <div className="btn-front rounded-xl flex justify-center items-center">
               <img
                 src={project.iconUrl}
@@ -63,7 +86,7 @@ const Projects = () => {
                 )}
               </div>
             </div>
-          </div>
+          </motion.div>
         ))}
       </div>
     </section>

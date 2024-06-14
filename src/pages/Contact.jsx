@@ -1,17 +1,24 @@
 import emailjs from "@emailjs/browser";
-import { useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import useAlert from "../hooks/useAlert";
 import Alert from "../components/Alert";
-import { FaGithub, FaInstagramSquare, FaLinkedin } from "react-icons/fa";
+import { FaLinkedin } from "react-icons/fa";
 import { IoLogoWhatsapp } from "react-icons/io";
 import { MdEmail } from "react-icons/md";
 import Credits from "../components/Credits";
+import { useAnimation, motion } from "framer-motion";
+import { VscGithub, VscGithubInverted } from "react-icons/vsc";
 
 const Contact = () => {
   const formRef = useRef();
   const [form, setForm] = useState({ name: "", email: "", message: "" });
   const { alert, showAlert, hideAlert } = useAlert();
   const [loading, setLoading] = useState(false);
+  const animationControls = useAnimation();
+
+  useEffect(() => {
+    animationControls.start({ y: 0, opacity: 1, transition: { duration: 1 } });
+  }, [animationControls]);
 
   const handleChange = ({ target: { name, value } }) => {
     setForm({ ...form, [name]: value });
@@ -103,14 +110,18 @@ const Contact = () => {
       {alert.show && <Alert {...alert} />}
 
       <div className="flex-1 min-w-[50%] flex flex-col">
-        <div className="flex flex-row gap-6 mb-4">
+        <motion.div
+          initial={{ y: -20, opacity: 0 }}
+          animate={animationControls}
+          className="flex flex-row gap-6 mb-4"
+        >
           <button
             className="text-cyan-500 hover:text-cyan-300 cursor-pointer"
             onClick={() =>
-              (window.location.href = "https://wa.me/+60182401703")
+              (window.location.href = "https://github.com/lubega-deriv")
             }
           >
-            <IoLogoWhatsapp size={28} />
+            <VscGithub size={28} />
           </button>
           <button
             className="text-cyan-500 hover:text-cyan-300 cursor-pointer"
@@ -124,10 +135,10 @@ const Contact = () => {
           <button
             className="text-cyan-500 hover:text-cyan-300 cursor-pointer"
             onClick={() =>
-              (window.location.href = "https://www.instagram.com/muhdlbega/")
+              (window.location.href = "https://wa.me/+60182401703")
             }
           >
-            <FaInstagramSquare size={28} />
+            <IoLogoWhatsapp size={30} />
           </button>
           <button
             className="text-cyan-500 hover:text-cyan-300 cursor-pointer"
@@ -143,16 +154,28 @@ const Contact = () => {
               (window.location.href = "https://github.com/muhdlubega")
             }
           >
-            <FaGithub size={28} />
+            <VscGithubInverted size={28} />
           </button>
-        </div>
-        <h1 className="head-text">Let&apos;s Get in Contact!</h1>
-        <p className="text-slate-400">
+        </motion.div>
+        <motion.h1
+          initial={{ y: -40, opacity: 0 }}
+          animate={animationControls}
+          className="head-text"
+        >
+          Let&apos;s Get in Contact!
+        </motion.h1>
+        <motion.p
+          initial={{ y: -40, opacity: 0 }}
+          animate={animationControls}
+          className="text-slate-400"
+        >
           If you are interested to connect and learn more about me send me an
           email down below or in one of the socials listed above. Thank you for
           visiting Lubega.dev :)
-        </p>
-        <form
+        </motion.p>
+        <motion.form
+          initial={{ y: -60, opacity: 0 }}
+          animate={animationControls}
           ref={formRef}
           onSubmit={handleSubmit}
           className="w-full flex flex-col gap-7 mt-14"
@@ -197,7 +220,7 @@ const Contact = () => {
           <button type="submit" disabled={loading} className="btn mb-32">
             {loading ? "Sending..." : "Submit"}
           </button>
-        </form>
+        </motion.form>
       </div>
       <Credits />
     </section>
