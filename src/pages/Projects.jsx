@@ -67,7 +67,7 @@ const Projects = () => {
                       className="flex gap-2 items-center font-semibold text-cyan-600 hover:text-cyan-500"
                     >
                       <FaDoorOpen size={24} />
-                      Open Website
+                      {project.buttontext}
                     </Link>
                   </div>
                 )}

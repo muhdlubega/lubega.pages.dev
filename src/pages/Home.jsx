@@ -71,22 +71,6 @@ const Home = () => {
         </div>
       )}
       <div className="z-10 w-full">
-        {/* <div className="absolute top-1/2 left-4 z-10">
-          <button
-            onClick={handleRotateLeft}
-            className="bg-transparent p-2 rounded-full hover:bg-teal-500"
-          >
-            <FaChevronCircleLeft color="white" size={28} />
-          </button>
-        </div>
-        <div className="absolute top-1/2 right-4 z-10">
-          <button
-            onClick={handleRotateRight}
-            className="bg-transparent p-2 rounded-full hover:bg-teal-500"
-          >
-            <FaChevronCircleRight color="white" size={28} />
-          </button>
-        </div> */}
         <div className="absolute bottom-6 left-0 right-0 z-10 flex items-center justify-center">
           {currentStage && <Modal currentStage={currentStage} />}
         </div>
