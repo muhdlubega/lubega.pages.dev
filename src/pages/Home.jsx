@@ -11,7 +11,7 @@ import Plane from "../models/Plane";
 import Fox from "../models/Fox";
 import Cactus from "../models/Cactus";
 import swipe from "../assets/swipe.svg";
-// import { FaChevronCircleLeft, FaChevronCircleRight } from "react-icons/fa";
+import { useNavigate } from "react-router-dom";
 
 const Home = () => {
   const [isRotating, setIsRotating] = useState(false);
@@ -20,6 +20,7 @@ const Home = () => {
   const [scaleFactor, setScaleFactor] = useState(1);
   const [positionFactor, setPositionFactor] = useState(1);
   const [showSwipeOverlay, setShowSwipeOverlay] = useState(true);
+  const navigate = useNavigate()
 
   useEffect(() => {
     const hasVisited = localStorage.getItem("hasVisited");
@@ -56,9 +57,29 @@ const Home = () => {
 
   const [backgroundScale, backgroundRotation] = adjustBackground();
 
-  // const handleRotateLeft = () => {};
+  const handleCanvasClick = (event) => {
+    const { clientX: x, clientY: y } = event;
+    const screenWidth = window.innerWidth;
+    const screenHeight = window.innerHeight;
 
-  // const handleRotateRight = () => {};
+    const centerRadius = Math.min(screenWidth, screenHeight) * 0.1;
+    const centerX = screenWidth / 2;
+    const centerY = screenHeight / 2;
+
+    const distance = Math.sqrt(
+      Math.pow(x - centerX, 2) + Math.pow(y - centerY, 2)
+    );
+
+    if (distance <= centerRadius) {
+      if (currentStage === 2) {
+        navigate("/projects");
+      } else if (currentStage === 3) {
+        navigate("/contact");
+      } else if (currentStage === 4) {
+        navigate("/about");
+      }
+    }
+  };
 
   return (
     <section className="w-full h-screen relative">
@@ -76,10 +97,12 @@ const Home = () => {
         </div>
       </div>
       <Canvas
-        className={`w-full h-screen bg-transparent ${
-          isRotating ? "cursor-grabbing" : "cursor-grab"
-        }`}
+        className={`w-full h-screen bg-transparent ${isRotating ? "cursor-grabbing" : "cursor-grab"
+          }`}
         camera={{ near: 0.1, far: 1000 }}
+        onClickCapture={(event) => {
+          handleCanvasClick(event);
+        }}
       >
         <Suspense fallback={<Loader />}>
           <directionalLight position={[1, 1, 1]} intensity={2} />
