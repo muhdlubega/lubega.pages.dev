@@ -20,6 +20,7 @@ const Home = () => {
   const [scaleFactor, setScaleFactor] = useState(1);
   const [positionFactor, setPositionFactor] = useState(1);
   const [showSwipeOverlay, setShowSwipeOverlay] = useState(true);
+  const [isHoveringClickableArea, setIsHoveringClickableArea] = useState(false);
   const navigate = useNavigate()
 
   useEffect(() => {
@@ -81,6 +82,21 @@ const Home = () => {
     }
   };
 
+  const handleMouseMove = (event) => {
+    const { clientX: x, clientY: y } = event;
+    const screenWidth = window.innerWidth;
+    const screenHeight = window.innerHeight;
+
+    const centerRadius = Math.min(screenWidth, screenHeight) * 0.1;
+    const centerX = screenWidth / 2;
+    const centerY = screenHeight / 2;
+
+    const distance = Math.sqrt(Math.pow(x - centerX, 2) + Math.pow(y - centerY, 2));
+    const isInClickableArea = distance <= centerRadius && [2, 3, 4].includes(currentStage);
+
+    setIsHoveringClickableArea(isInClickableArea);
+  };
+
   return (
     <section className="w-full h-screen relative">
       {showSwipeOverlay && (
@@ -97,12 +113,15 @@ const Home = () => {
         </div>
       </div>
       <Canvas
-        className={`w-full h-screen bg-transparent ${isRotating ? "cursor-grabbing" : "cursor-grab"
+        className={`w-full h-screen bg-transparent ${isRotating
+            ? "cursor-grabbing"
+            : isHoveringClickableArea
+              ? "cursor-pointer"
+              : "cursor-grab"
           }`}
         camera={{ near: 0.1, far: 1000 }}
-        onClickCapture={(event) => {
-          handleCanvasClick(event);
-        }}
+        onClickCapture={handleCanvasClick}
+        onMouseMove={handleMouseMove}
       >
         <Suspense fallback={<Loader />}>
           <directionalLight position={[1, 1, 1]} intensity={2} />
