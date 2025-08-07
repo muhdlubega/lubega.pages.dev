@@ -3,6 +3,7 @@ import "react-alice-carousel/lib/alice-carousel.css";
 import { BiLogoPostgresql } from "react-icons/bi";
 import {
   FaCss3Alt,
+  FaDotCircle,
   FaGitAlt,
   FaHtml5,
   FaNodeJs,
@@ -28,6 +29,7 @@ const Carousel = () => {
     { src: <SiTypescript color="cyan" size={48} />, alt: "TypeScript" },
     { src: <SiJavascript color="cyan" size={48} />, alt: "JavaScript" },
     { src: <SiMobx color="cyan" size={48} />, alt: "MobX" },
+    { src: <FaDotCircle color="cyan" size={48} />, alt: "Outsystems" },
     { src: <SiJest color="cyan" size={48} />, alt: "Jest" },
     { src: <SiCypress color="cyan" size={48} />, alt: "Cypress.io" },
     { src: <FaPython color="cyan" size={48} />, alt: "Python" },

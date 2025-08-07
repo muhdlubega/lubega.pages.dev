@@ -69,11 +69,11 @@ export const experiences = [
     id: 5,
     title: "Frontend Full Stack Developer (Freelance)",
     company_name: "Mindhive Asia Sdn. Bhd.",
-    date: "August 2024 - December 2024",
+    date: "August 2024 - June 2025",
     points: [
       "Leading the frontend development via NextJS and React of client-based projects related to AI and machine learning operations, such as document processing and account payable/ receivable automations.",
       "As the sole frontend developer I am tasked in aliasing with the backend and design team to manage the business requirements and client needs in delivering the requested products.",
-      "Completed and delivered 3 projects for ZUS Coffee Sdn Bhd as well as assisted with 2 other ongoing projects for other clients with high-quality output and positive feedback."
+      "Completed and delivered 4 projects for ZUS Coffee Sdn Bhd as well as assisted with 2 other ongoing projects for other clients with high-quality output and positive feedback."
     ],
   },
   {
@@ -82,11 +82,13 @@ export const experiences = [
     company_name: "Deriv",
     date: "August 2023 - Present",
     points: [
-      "Tasked in handling cashier and payments related maintenance and improvements. I worked mainly with React and Typescript to implement new features and user stories of the web application while solving bugs to maintain the existing legacy codebase and optimize performance.",
-      "Collaborated globally with members from varying departments such as backend, product design and quality assurance for the desktop and responsive redesign of the web application and new code architecture in Deriv app monorepo.",
-      "Main developer in Wallets squad responsible for increasing the Jest unit test code coverage to above 80% and assisting the quality assurance automation team with the Cypress.io E2E test for the squad.",
+      "Tasked in handling cashier and payments related maintenance and improvements. I worked mainly with React and TypeScript to implement new features and maintain the codebase of the web application.",
+      "Collaborated globally with members from varying departments such as backend, product design and quality assurance for the development of the web application and new code architecture.",
+      "Responsible for increasing the Jest unit test code coverage of the wallets package to over 80% and assisting the quality assurance automation team with the Testim/Cypress.io E2E test for the squad.",
+      "Optimized performance of the wallets package, reducing the bundle load size by over 74%.",
       "Took initiative of implementing translations in the wallets package, making it accessible to up to 21 different languages, including RTL support for Arabic language.",
-      "Awarded Stars of the Month for April 2024 due to the high number of bug cards and user stories closed for project release.",
+      "Worked extensively with Outsystems for the redesign of the web application in low-code architecture.",
+      "Awarded Stars of the Month for April 2024 and April 2025 in recognition of the high number of bug cards and user stories closed, as well as contributions to improving performance and caching of the low-code platform."
     ],
   },
 ];
@@ -95,9 +97,9 @@ export const projects = [
   {
     theme: "btn-back-red",
     iconUrl: mjj,
-    name: "MyJejak [WIP]",
+    name: "MyJejak",
     description:
-      "MyJejak is a project I'm currently working on to display realtime data of public transort and routing destinations. It is a mobile app written in Typescript and React Native with Go and Supabase being used for the backend. MyJejak uses realtime GTFS data to display public transport current locations, routes, schedules and more to ensure user get's efficient and reliable data for trip planning and delay notifications. The app design is also done to ensure best user experience by incorporating various features such as route favourites, full transport schedules, dark mode, notification carousel, smart searching and more.",
+      "MyJejak is a small project made to display realtime data of public transort and routing destinations. It is a mobile app written in Typescript and React Native with Go and Supabase being used for the backend. MyJejak uses realtime GTFS data to display public transport current locations, routes, schedules and more to ensure user get's efficient and reliable data for trip planning and delay notifications. The app design was also done via Figma to ensure best user experience by incorporating various features such as route favourites, full transport schedules, dark mode, notification carousel, smart searching and more.",
     link: "https://my-jejak-poc.pages.dev/",
     buttontext: "Open POC"
   },

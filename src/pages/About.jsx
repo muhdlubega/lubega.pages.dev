@@ -39,12 +39,12 @@ const About = () => {
           constructive criticism to become better in the working field.
         </p>
         <p>
-          Currently I am working as a frontend developer at Deriv, where I am
-          tasked in handling cashier and payments related maintenance and
-          improvements. For this role I work with Typescript, React, SASS, MobX
-          and Jest to maintain the current codebase, solving bugs and improving
-          on new features and user stories. I am also tasked in assisting the QA
-          automation of the team by incorporating e2e tests via Cypress.io.
+          I am currently working as a frontend developer at Deriv, where I am responsible
+          for maintaining and improving the cashier and payments-related features. In this
+          role, I work with TypeScript, React, SASS, MobX, and Jest to manage the existing
+          high-code codebase, as well as Outsystems for the low-code redesign of the platform.
+          I also assist the QA team by contributing to test automation using end-to-end
+          testing tools such as Testim and Cypress.io.
         </p>
       </motion.div>
 
