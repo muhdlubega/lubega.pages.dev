@@ -39,12 +39,11 @@ const About = () => {
           constructive criticism to become better in the working field.
         </p>
         <p>
-          I am currently working as a frontend developer at Deriv, where I am responsible
-          for maintaining and improving the cashier and payments-related features. In this
-          role, I work with TypeScript, React, SASS, MobX, and Jest to manage the existing
-          high-code codebase, as well as Outsystems for the low-code redesign of the platform.
-          I also assist the QA team by contributing to test automation using end-to-end
-          testing tools such as Testim and Cypress.io.
+          I am <strong>Full-stack Web Developer</strong> with hands-on experience designing, building, and optimizing dynamic web
+          applications. Skilled in both front-end and back-end technologies including React, TypeScript, Node.js, SQL,
+          and Docker. Passionate about crafting high-quality, scalable, and interactive digital experiences that balance
+          innovation, usability, and performance. Recognized for strong problem-solving skills, cross-functional
+          collaboration, and continuous learning in modern web ecosystems.
         </p>
       </motion.div>
 

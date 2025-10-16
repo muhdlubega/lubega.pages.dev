@@ -8,6 +8,7 @@ import ss from "../assets/projects/ss.png";
 import vg from "../assets/projects/vg.png";
 import mu from "../assets/projects/mu.png";
 import ba from "../assets/projects/ba.png";
+import ip from "../assets/projects/ip.png";
 
 export const skills = [
   {
@@ -40,9 +41,8 @@ export const experiences = [
     company_name: "Deriv",
     date: "March 2023 - July 2023",
     points: [
-      "Involved in the frontend development, mobile development, backend development, quality assurance and product design modules.",
-      "Delved into the tools and knowledge needed for the different modules as a prospective employee and worked in teams with people from various backgrounds to develop complete products.",
-      "Awarded winner for the mobile development hackathon and product design competition as well as runner-up for the frontend development hackathon.",
+      "Gained comprehensive exposure to frontend, mobile, backend, QA, and UI/UX design modules. Worked collaboratively on multidisciplinary teams to deliver functional full-stack prototypes.",
+      "Winner of the Mobile Development Hackathon and Product Design Competition; Runner-up in Frontend Hackathon.",
     ],
   },
   {
@@ -71,24 +71,36 @@ export const experiences = [
     company_name: "Mindhive Asia Sdn. Bhd.",
     date: "August 2024 - June 2025",
     points: [
-      "Leading the frontend development via NextJS and React of client-based projects related to AI and machine learning operations, such as document processing and account payable/ receivable automations.",
-      "As the sole frontend developer I am tasked in aliasing with the backend and design team to manage the business requirements and client needs in delivering the requested products.",
-      "Completed and delivered 4 projects for ZUS Coffee Sdn Bhd as well as assisted with 2 other ongoing projects for other clients with high-quality output and positive feedback."
+      "Led front-end development for AI-driven solutions in Next.js and React, including document processing and accounts payable/receivable automation.",
+      "Partnered closely with backend engineers (Node.js, SQL) and designers to implement and integrate REST APIs, authentication, and data management.",
+      "Delivered 4 full projects for ZUS Coffee and contributed to 2 ongoing enterprise projects, earning positive client feedback for quality and timeliness.",
+      "Implemented reusable UI libraries and modular code structures to improve maintainability across multiple client projects."
     ],
   },
   {
     id: 6,
+    title: "GCPBoleh Season 7",
+    company_name: "Google",
+    date: "August 2025",
+    points: [
+      "Completed GCPBoleh Season 7, an online self-study program by Google Cloud for developers in Malaysia.",
+      "Delved into the basic skills in Generative AI, BigQuery, Vertex AI, TensorFlow, Cloud Security, and Infrastructure Modernization",
+      "Earned a total of 8 badges with 5 skill badges.",
+    ],
+  },
+  {
+    id: 7,
     title: "Frontend Developer",
     company_name: "Deriv",
     date: "August 2023 - Present",
     points: [
-      "Tasked in handling cashier and payments related maintenance and improvements. I worked mainly with React and TypeScript to implement new features and maintain the codebase of the web application.",
-      "Collaborated globally with members from varying departments such as backend, product design and quality assurance for the development of the web application and new code architecture.",
-      "Responsible for increasing the Jest unit test code coverage of the wallets package to over 80% and assisting the quality assurance automation team with the Testim/Cypress.io E2E test for the squad.",
-      "Optimized performance of the wallets package, reducing the bundle load size by over 74%.",
-      "Took initiative of implementing translations in the wallets package, making it accessible to up to 21 different languages, including RTL support for Arabic language.",
-      "Worked extensively with Outsystems for the redesign of the web application in low-code architecture.",
-      "Awarded Stars of the Month for April 2024 and April 2025 in recognition of the high number of bug cards and user stories closed, as well as contributions to improving performance and caching of the low-code platform."
+      " Maintained and enhanced cashier and payment systems for global web applications built with React and TypeScript.",
+      "Collaborated with backend, design, and QA teams across multiple regions to develop features and improve architecture in a large-scale monorepo environment.",
+      "Increased unit test coverage to over 80% using Jest and supported Cypress.io E2E automation.",
+      "Optimized wallet package performance, reducing bundle load size by 74% for faster, more efficient delivery.",
+      "Implemented i18n and RTL support for 21 languages, significantly improving accessibility and user reach.",
+      "Contributed to the company’s low-code platform redesign using Outsystems, improving maintainability and feature rollout speed.",
+      "3× Stars of the Month awardee for consistently high delivery quality and measurable performance improvements."
     ],
   },
 ];
@@ -105,22 +117,22 @@ export const projects = [
   },
   {
     theme: "btn-back-green",
+    iconUrl: ip,
+    name: "IMG.prcess",
+    description:
+      "IMG.prcess is an AI-powered document processing app that extracts structured data from document images using Mistral’s Pixtral-12b vision model. It provides confidence scores for each extracted field, supports exports to Excel and PDF, and maintains a searchable document history. Built with Next.js 14, TypeScript, and Tailwind CSS v4, the app features a sleek dark mode interface, responsive design, and real-time processing indicators. Data is stored and managed via Supabase with IP-based tracking, while exports are handled using xlsx and jsPDF libraries for seamless data output.",
+    link: "https://imgprcess.pages.dev/",
+    sourceCode: "https://github.com/muhdlubega/img.prcess",
+    buttontext: "Open Website"
+  },
+  {
+    theme: "btn-back-green",
     iconUrl: ms,
     name: "MgmtSys",
     description:
       "MgmtSys is a comprehensive management system dashboard featuring API integration, state management, data visualization, CRUD operations, performance optimization, and security measures and is written mainly in React Javascript and SCSS. It utilizes Firebase and Firestore as a database and authorization solution while also integrating data from the JSONPlaceholder API. The following documentation provides an overview of the project's features, dependencies, setup instructions, usage, deployment, and submission details.",
     link: "https://mgmtsys.vercel.app/",
     sourceCode: "https://github.com/muhdlubega/mgmt-sys-dashboard",
-    buttontext: "Open Website"
-  },
-  {
-    theme: "btn-back-green",
-    iconUrl: mu,
-    name: "Muizzle.me",
-    description:
-      "Muizzle.me is a simple puzzle game designed for movie lovers where user can guess movie titles based on the screenshots of the movie displayed. Muizzle uses Cloudflare R2 bucket for image storage and local storage for user statistics. It is mainly writted in React Typescript and CSS for styling. It also has integrated Google Analytics and Google Adsense for analytical and monetization purposes.",
-    link: "https://muizzle.me/",
-    sourceCode: "https://github.com/muhdlubega/muizzle",
     buttontext: "Open Website"
   },
   {
@@ -145,6 +157,16 @@ export const projects = [
   },
   {
     theme: "btn-back-green",
+    iconUrl: mu,
+    name: "Muizzle.me",
+    description:
+      "Muizzle.me is a simple puzzle game designed for movie lovers where user can guess movie titles based on the screenshots of the movie displayed. Muizzle uses Cloudflare R2 bucket for image storage and local storage for user statistics. It is mainly writted in React Typescript and CSS for styling. It also has integrated Google Analytics and Google Adsense for analytical and monetization purposes.",
+    link: "https://muizzle.me/",
+    sourceCode: "https://github.com/muhdlubega/muizzle",
+    buttontext: "Open Website"
+  },
+  {
+    theme: "btn-back-green",
     iconUrl: ck,
     name: "CryptoKing",
     description:
@@ -155,12 +177,11 @@ export const projects = [
   },
   {
     theme: "btn-back-green",
-    iconUrl: vg,
-    name: "Visual Gamer",
+    iconUrl: lo,
+    name: "Lib.Org",
     description:
-      "Visual Gamer is a game database website I made in a group of five for our hackathon in the Deriv BeSquare Graduate Programme. For the hackathon our goal was to utilize any open-source API to create an interactive website in less than a week. Our team utilized various frameworks and tools such as React, Firebase, Typescript, SCSS and more to create this website using the RAWG API.",
-    link: "https://visualgamer.vercel.app/",
-    sourceCode: "https://github.com/muhdlubega/ctrlc-ctrlv-hackathon",
+      "Lib.Org is a library organizer mobile app I made in a group of two for our mobile development hackathon in the Deriv BeSquare Graduate Programme. For the hackathon our goal was to utilize any open-source API to create an interactive mobile app in one week. Our team utilized mainly the Dart language and Flutter framework with various tools and widgets such as Firebase, Bloc, flutter_barcode_scanner and more to create this app using the Google Books API. This app allows user to perform various actions such as searching for book and e-book details, adding books to favourites and sorting them according to libraries, scanning barcode or entering existing ISBN number of physical books to be added into the organizer, toggling light or dark mode and more.",
+    sourceCode: "https://github.com/muhdlubega/library-organizer",
     buttontext: "Open Website"
   },
   {
@@ -175,11 +196,12 @@ export const projects = [
   },
   {
     theme: "btn-back-green",
-    iconUrl: lo,
-    name: "Lib.Org",
+    iconUrl: vg,
+    name: "Visual Gamer",
     description:
-      "Lib.Org is a library organizer mobile app I made in a group of two for our mobile development hackathon in the Deriv BeSquare Graduate Programme. For the hackathon our goal was to utilize any open-source API to create an interactive mobile app in one week. Our team utilized mainly the Dart language and Flutter framework with various tools and widgets such as Firebase, Bloc, flutter_barcode_scanner and more to create this app using the Google Books API. This app allows user to perform various actions such as searching for book and e-book details, adding books to favourites and sorting them according to libraries, scanning barcode or entering existing ISBN number of physical books to be added into the organizer, toggling light or dark mode and more.",
-    sourceCode: "https://github.com/muhdlubega/library-organizer",
+      "Visual Gamer is a game database website I made in a group of five for our hackathon in the Deriv BeSquare Graduate Programme. For the hackathon our goal was to utilize any open-source API to create an interactive website in less than a week. Our team utilized various frameworks and tools such as React, Firebase, Typescript, SCSS and more to create this website using the RAWG API.",
+    link: "https://visualgamer.vercel.app/",
+    sourceCode: "https://github.com/muhdlubega/ctrlc-ctrlv-hackathon",
     buttontext: "Open Website"
   },
   {
