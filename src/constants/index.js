@@ -9,6 +9,7 @@ import vg from "../assets/projects/vg.png";
 import mu from "../assets/projects/mu.png";
 import ba from "../assets/projects/ba.png";
 import ip from "../assets/projects/ip.png";
+import fa from "../assets/projects/fa.png";
 
 export const skills = [
   {
@@ -137,22 +138,22 @@ export const projects = [
   },
   {
     theme: "btn-back-green",
+    iconUrl: fa,
+    name: "Facial Analyzer",
+    description:
+      "Facial Analyzer is a Next.js facial recognition application powered by Mistral's Pixtral-12b vision model that analyzes faces to predict ancestry origins and emotional expressions with accuracy percentages. Users can either select from a horizontal scrolling carousel of template faces or upload their own photos for analysis. The app features a clean, modern interface built with shadcn/ui components, providing an intuitive experience from image selection through detailed results visualization with progress indicators and confidence scores for each prediction.",
+    link: "https://ai-facial-analyzer.vercel.app/",
+    sourceCode: "https://github.com/muhdlubega/facial-analyzer",
+    buttontext: "Open Website"
+  },
+  {
+    theme: "btn-back-green",
     iconUrl: ba,
     name: "Beg.AI",
     description:
       "Beg.AI is a simple AI model comparison website which uses various AI models for text and image processing. Current models supported are Gemini's gemini-1.5-flash and Mistral's pixtral-12b-2409 models. The app is written in React Typescript and TailwindCSS for styling. It also utiziles Supabase for authentication and data/image storage purposes.",
     link: "https://beg-ai.vercel.app/",
     sourceCode: "https://github.com/muhdlubega/beg-ai",
-    buttontext: "Open Website"
-  },
-  {
-    theme: "btn-back-green",
-    iconUrl: cc,
-    name: "CommonCents",
-    description:
-      "CommonCents is a comprehensive Trading Information Hub designed to help beginners and anyone interested in trading learn more about trading through various features. This web application and mobile device application provide access to Trading News, Trading Guidelines, Trading Simulation, Market Overview, and a Forum. The project focuses on Stock Indices and Volatility Market, with a trading simulation that uses live data and virtual currency for options trading. Users can share a single account on both platforms, and they are ranked on a leaderboard based on their net worth, creating a gamified aspect to attract and engage users.",
-    link: "https://commoncents.vercel.app/",
-    sourceCode: "https://github.com/muhdlubega/DRC-CommonCents-WebApp",
     buttontext: "Open Website"
   },
   {
@@ -177,21 +178,21 @@ export const projects = [
   },
   {
     theme: "btn-back-green",
+    iconUrl: cc,
+    name: "CommonCents",
+    description:
+      "CommonCents is a comprehensive Trading Information Hub designed to help beginners and anyone interested in trading learn more about trading through various features. This web application and mobile device application provide access to Trading News, Trading Guidelines, Trading Simulation, Market Overview, and a Forum. The project focuses on Stock Indices and Volatility Market, with a trading simulation that uses live data and virtual currency for options trading. Users can share a single account on both platforms, and they are ranked on a leaderboard based on their net worth, creating a gamified aspect to attract and engage users.",
+    link: "https://commoncents.vercel.app/",
+    sourceCode: "https://github.com/muhdlubega/DRC-CommonCents-WebApp",
+    buttontext: "Open Website"
+  },
+  {
+    theme: "btn-back-green",
     iconUrl: lo,
     name: "Lib.Org",
     description:
       "Lib.Org is a library organizer mobile app I made in a group of two for our mobile development hackathon in the Deriv BeSquare Graduate Programme. For the hackathon our goal was to utilize any open-source API to create an interactive mobile app in one week. Our team utilized mainly the Dart language and Flutter framework with various tools and widgets such as Firebase, Bloc, flutter_barcode_scanner and more to create this app using the Google Books API. This app allows user to perform various actions such as searching for book and e-book details, adding books to favourites and sorting them according to libraries, scanning barcode or entering existing ISBN number of physical books to be added into the organizer, toggling light or dark mode and more.",
     sourceCode: "https://github.com/muhdlubega/library-organizer",
-    buttontext: "Open Website"
-  },
-  {
-    theme: "btn-back-green",
-    iconUrl: ss,
-    name: "ShopShwift",
-    description:
-      "ShopShwift is an interactive simple e-commerce website with a vivid and appealing user interface. This project is written in React Javascript and SCSS to imitate an actual e-commerce website with integrated mock API products. It simulates the behaviour of simple e-commerce website functions such as sorting and adding to cart using React Context.",
-    link: "https://shopshwift.vercel.app/",
-    sourceCode: "https://github.com/muhdlubega/e-commerce",
     buttontext: "Open Website"
   },
   {
@@ -202,6 +203,16 @@ export const projects = [
       "Visual Gamer is a game database website I made in a group of five for our hackathon in the Deriv BeSquare Graduate Programme. For the hackathon our goal was to utilize any open-source API to create an interactive website in less than a week. Our team utilized various frameworks and tools such as React, Firebase, Typescript, SCSS and more to create this website using the RAWG API.",
     link: "https://visualgamer.vercel.app/",
     sourceCode: "https://github.com/muhdlubega/ctrlc-ctrlv-hackathon",
+    buttontext: "Open Website"
+  },
+  {
+    theme: "btn-back-green",
+    iconUrl: ss,
+    name: "ShopShwift",
+    description:
+      "ShopShwift is an interactive simple e-commerce website with a vivid and appealing user interface. This project is written in React Javascript and SCSS to imitate an actual e-commerce website with integrated mock API products. It simulates the behaviour of simple e-commerce website functions such as sorting and adding to cart using React Context.",
+    link: "https://shopshwift.vercel.app/",
+    sourceCode: "https://github.com/muhdlubega/e-commerce",
     buttontext: "Open Website"
   },
   {
