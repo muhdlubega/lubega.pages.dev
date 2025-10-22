@@ -121,7 +121,7 @@ export const projects = [
     iconUrl: ip,
     name: "IMG.prcess",
     description:
-      "IMG.prcess is an AI-powered document processing app that extracts structured data from document images using Mistral’s Pixtral-12b vision model. It provides confidence scores for each extracted field, supports exports to Excel and PDF, and maintains a searchable document history. Built with Next.js 14, TypeScript, and Tailwind CSS v4, the app features a sleek dark mode interface, responsive design, and real-time processing indicators. Data is stored and managed via Supabase with IP-based tracking, while exports are handled using xlsx and jsPDF libraries for seamless data output.",
+      "IMG.prcess is an AI-powered OCR document processing app that extracts structured data from document images using Mistral’s Pixtral-12b vision model. It provides confidence scores for each extracted field, supports exports to Excel and PDF, and maintains a searchable document history. Built with Next.js, TypeScript, and TailwindCSS, the app features a sleek dark mode interface, responsive design, and real-time processing indicators. Data is stored and managed via Supabase with IP-based tracking, while exports are handled using xlsx and jsPDF libraries for seamless data output.",
     link: "https://imgprcess.vercel.app/",
     sourceCode: "https://github.com/muhdlubega/img.prcess",
     buttontext: "Open Website"
