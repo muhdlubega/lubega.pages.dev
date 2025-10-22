@@ -207,22 +207,22 @@ export const projects = [
   },
   {
     theme: "btn-back-green",
-    iconUrl: ss,
-    name: "ShopShwift",
-    description:
-      "ShopShwift is an interactive simple e-commerce website with a vivid and appealing user interface. This project is written in React Javascript and SCSS to imitate an actual e-commerce website with integrated mock API products. It simulates the behaviour of simple e-commerce website functions such as sorting and adding to cart using React Context.",
-    link: "https://shopshwift.vercel.app/",
-    sourceCode: "https://github.com/muhdlubega/e-commerce",
-    buttontext: "Open Website"
-  },
-  {
-    theme: "btn-back-green",
     iconUrl: ri,
     name: "Recommend.me",
     description:
       "Recommend.me is a TV Show database I made as my final project for the Harvard CS50 online course. For this project, I worked with the TMDB API to display data about TV shows through frameworks and tools such as React, JavaScript, and CSS. This was my introductory project to React, where I tried to familiarize myself with React Hooks.",
     link: "https://recommendme-livid.vercel.app/",
     sourceCode: "https://github.com/muhdlubega/recommendme",
+    buttontext: "Open Website"
+  },
+  {
+    theme: "btn-back-green",
+    iconUrl: ss,
+    name: "ShopShwift",
+    description:
+      "ShopShwift is an interactive simple e-commerce website with a vivid and appealing user interface. This project is written in React Javascript and SCSS to imitate an actual e-commerce website with integrated mock API products. It simulates the behaviour of simple e-commerce website functions such as sorting and adding to cart using React Context.",
+    link: "https://shopshwift.vercel.app/",
+    sourceCode: "https://github.com/muhdlubega/e-commerce",
     buttontext: "Open Website"
   },
 ];
