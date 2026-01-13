@@ -10,6 +10,8 @@ import mu from "../assets/projects/mu.png";
 import ba from "../assets/projects/ba.png";
 import ip from "../assets/projects/ip.png";
 import fa from "../assets/projects/fa.png";
+import mt from "../assets/projects/mt.png";
+import sa from "../assets/projects/sa.png";
 
 export const skills = [
   {
@@ -91,6 +93,16 @@ export const experiences = [
   },
   {
     id: 7,
+    title: "Professional Certificate in Computer Science for Artificial Intelligence",
+    company_name: "Harvard Online",
+    date: "August 2022 - November 2022",
+    points: ["Completed the CS50: Introduction to Computer Science and CS50’s Introduction to Artificial Intelligence with Python courses.",
+      "Delved into the basics of artificial intelligence principles, how to use AI in Python programs and design intelligent systems.",
+      "Awarded the professional cerificate upon completion of all the projects, courses and modules."
+    ],
+  },
+  {
+    id: 8,
     title: "Frontend Developer",
     company_name: "Deriv",
     date: "August 2023 - Present",
@@ -109,10 +121,29 @@ export const experiences = [
 export const projects = [
   {
     theme: "btn-back-green",
+    iconUrl: mt,
+    name: "MyTransit",
+    description:
+      "MyTransit is a modern web application for tracking real-time public transportation in Malaysia, built with React, TypeScript, and Mapbox. MyTransit provides live vehicle positions, route visualization, schedules, and directions for buses and trains across multiple operators. It also utilizes Mistral's mistral-large-latest model for chatbot utilities and routing suggestions, alongside Supabase for authentication and data storage.",
+    link: "https://mytransit.vercel.app/",
+    sourceCode: "https://github.com/muhdlubega/mytransit",
+    buttontext: "Open Website"
+  },
+  {
+    theme: "btn-back-green",
+    iconUrl: sa,
+    name: "Saksama",
+    description:
+      "Saksama is an AI-powered document processing platform designed for Malaysian SMEs, offering three specialized modules for halal compliance, accounting automation, and customs verification. It utilizes Mistral's Pixtral-12b vision model for OCR and document processing, alongside Supabase for data storage and authentication.",
+    link: "https://saksama.live/",
+    buttontext: "Open Website"
+  },
+  {
+    theme: "btn-back-green",
     iconUrl: fa,
     name: "Facial Analyzer",
     description:
-      "Facial Analyzer is a Next.js facial recognition application powered by Mistral's Pixtral-12b vision model that analyzes faces to predict ancestry origins and emotional expressions with accuracy percentages. Users can either select from a horizontal scrolling carousel of template faces or upload their own photos for analysis. The app features a clean, modern interface built with shadcn/ui components, providing an intuitive experience from image selection through detailed results visualization with progress indicators and confidence scores for each prediction.",
+      "Facial Analyzer is a Next.js facial recognition application powered by Mistral's Pixtral-12b vision model that analyzes faces to predict ancestry origins and emotional expressions with accuracy percentages. Users can either select from a horizontal scrolling carousel of template faces or upload their own photos for analysis. The app features a clean, modern interface built with shadcn/ui components.",
     link: "https://ai-facial-analyzer.vercel.app/",
     sourceCode: "https://github.com/muhdlubega/facial-analyzer",
     buttontext: "Open Website"
@@ -122,7 +153,7 @@ export const projects = [
     iconUrl: ip,
     name: "IMG.prcess",
     description:
-      "IMG.prcess is an AI-powered OCR document processing app that extracts structured data from document images using Mistral’s Pixtral-12b vision model. It provides confidence scores for each extracted field, supports exports to Excel and PDF, and maintains a searchable document history. Built with Next.js, TypeScript, and TailwindCSS, the app features a sleek dark mode interface, responsive design, and real-time processing indicators. Data is stored and managed via Supabase with IP-based tracking, while exports are handled using xlsx and jsPDF libraries for seamless data output.",
+      "IMG.prcess is an AI-powered OCR document processing app that extracts structured data from document images using Mistral’s Pixtral-12b vision model. It provides confidence scores for each extracted field, supports exports to Excel and PDF, and maintains a searchable document history. Built with Next.js, TypeScript, and TailwindCSS. Data is stored and managed via Supabase with IP-based tracking, while exports are handled using xlsx and jsPDF libraries for seamless data output.",
     link: "https://imgprcess.vercel.app/",
     sourceCode: "https://github.com/muhdlubega/img.prcess",
     buttontext: "Open Website"
@@ -132,7 +163,7 @@ export const projects = [
     iconUrl: ms,
     name: "MgmtSys",
     description:
-      "MgmtSys is a comprehensive management system dashboard featuring API integration, state management, data visualization, CRUD operations, performance optimization, and security measures and is written mainly in React Javascript and SCSS. It utilizes Firebase and Firestore as a database and authorization solution while also integrating data from the JSONPlaceholder API. The following documentation provides an overview of the project's features, dependencies, setup instructions, usage, deployment, and submission details.",
+      "MgmtSys is a comprehensive management system dashboard featuring API integration, state management, data visualization, CRUD operations, performance optimization, and security measures and is written mainly in React Javascript and SCSS. It utilizes Firebase and Firestore as a database and authorization solution while also integrating data from the JSONPlaceholder API.",
     link: "https://mgmtsys.vercel.app/",
     sourceCode: "https://github.com/muhdlubega/mgmt-sys-dashboard",
     buttontext: "Open Website"
