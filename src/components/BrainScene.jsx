@@ -1,7 +1,7 @@
 /* eslint-disable react/no-unknown-property */
 import { Suspense, useEffect, useMemo, useRef } from "react";
 import { Canvas, useFrame, useThree } from "@react-three/fiber";
-import { Center, Float, useGLTF } from "@react-three/drei";
+import { Center, useGLTF } from "@react-three/drei";
 import * as THREE from "three";
 import brainModel from "../assets/brain.glb";
 
@@ -25,7 +25,7 @@ const Brain = ({ progressRef }) => {
     });
   }, [brain]);
 
-  useFrame((state, delta) => {
+  useFrame((_, delta) => {
     if (!group.current) return;
     const progress = progressRef.current;
     const reduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
@@ -35,13 +35,10 @@ const Brain = ({ progressRef }) => {
       group.current.rotation.y += delta * (0.11 + progress * 0.18);
       group.current.rotation.x = THREE.MathUtils.lerp(group.current.rotation.x, -0.08 + progress * 0.42, delta * 1.4);
       group.current.rotation.z = THREE.MathUtils.lerp(group.current.rotation.z, progress * -0.22, delta * 1.4);
-      group.current.scale.multiplyScalar(1 + Math.sin(state.clock.elapsedTime * 1.1) * 0.012);
     }
-    group.current.position.x = THREE.MathUtils.lerp(group.current.position.x, progress > 0.09 ? viewport.width * 0.17 : 0, delta * 1.4);
-    group.current.position.y = THREE.MathUtils.lerp(group.current.position.y, progress * -0.32, delta * 1.4);
   });
 
-  return <Float speed={0.55} rotationIntensity={0.04} floatIntensity={0.12}><group ref={group}><Center><primitive object={brain} /></Center></group></Float>;
+  return <group ref={group}><Center><primitive object={brain} /></Center></group>;
 };
 
 const BrainScene = ({ progressRef }) => (
