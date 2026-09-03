@@ -54,7 +54,6 @@ const FeaturedCard = ({ project, index, onOpen }) => (
   <motion.article className={`featured-card rank-${index + 1}`} style={{ "--accent": project.accent }} {...reveal}>
     <div className="featured-media">
       {project.mediaType === "video" ? <video src={project.media} autoPlay muted loop playsInline aria-label={`${project.name} interface preview`} /> : <img src={project.media} alt={`${project.name} interface preview`} />}
-      <span className="project-rank">{project.rank}</span>
     </div>
     <div className="featured-content"><p className="micro-label">{project.eyebrow}</p><h3>{project.name}</h3><p className="project-tagline">{project.tagline}</p><p>{project.description}</p><button className="text-button" onClick={() => onOpen(project)}>Explore system <FaArrowRight /></button></div>
     <div className="podium-base"><span>{project.name.toUpperCase()}</span></div>
@@ -124,7 +123,7 @@ const App = () => {
 
       <section id="projects" className="projects section-shell content-layer">
         <SectionTitle index="02" eyebrow="SELECTED SYSTEMS / 2026" title={<>Work that goes<br /><em>beyond the demo.</em></>} copy="Three flagship systems, designed across the product, intelligence and infrastructure layers." />
-        <div className="featured-podium">{featuredProjects.map((project, index) => <FeaturedCard key={project.id} project={project} index={index} onOpen={setSelectedProject} />)}</div>
+        <div className="featured-podium">{[featuredProjects[1], featuredProjects[0], featuredProjects[2]].map((project, index) => <FeaturedCard key={project.id} project={project} index={index} onOpen={setSelectedProject} />)}</div>
         <div className="collection-heading"><div><p className="eyebrow">COLLECTION A</p><h2>Applied AI projects</h2></div><span>06 SYSTEMS</span></div>
         <div className="project-grid ai-grid">{aiProjects.map((project) => <ProjectCard key={project.name} project={project} />)}</div>
         <div className="collection-heading frontend-heading"><div><p className="eyebrow">COLLECTION B</p><h2>Frontend & full-stack</h2></div><span>08 BUILDS</span></div>

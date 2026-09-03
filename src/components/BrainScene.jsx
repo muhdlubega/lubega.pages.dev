@@ -18,6 +18,15 @@ const Brain = ({ progressRef }) => {
       node.receiveShadow = true;
       if (node.material) {
         node.material = node.material.clone();
+        if (node.material.color) {
+          const tone = {};
+          node.material.color.getHSL(tone);
+          node.material.color.setHSL(tone.h, Math.min(1, tone.s * 1.45 + 0.15), tone.l * 0.58);
+        }
+        if (node.material.emissive) {
+          node.material.emissive.set("#063b40");
+          node.material.emissiveIntensity = 0.14;
+        }
         node.material.roughness = 0.42;
         node.material.metalness = 0.18;
         node.material.envMapIntensity = 1.4;
@@ -44,10 +53,10 @@ const Brain = ({ progressRef }) => {
 const BrainScene = ({ progressRef }) => (
   <div className="brain-canvas" aria-hidden="true">
     <Canvas dpr={[1, 1.6]} camera={{ position: [0, 0, 7], fov: 34 }} gl={{ antialias: true, alpha: true }}>
-      <ambientLight intensity={0.55} color="#73efff" />
-      <directionalLight position={[-4, 5, 6]} intensity={3.4} color="#d4fbff" />
-      <pointLight position={[4, 1, 3]} intensity={12} distance={12} color="#a5ff38" />
-      <pointLight position={[-4, -2, 2]} intensity={9} distance={10} color="#ff39ca" />
+      <ambientLight intensity={0.32} color="#46d8ec" />
+      <directionalLight position={[-4, 5, 6]} intensity={2.5} color="#b8f6ff" />
+      <pointLight position={[4, 1, 3]} intensity={15} distance={12} color="#9cff23" />
+      <pointLight position={[-4, -2, 2]} intensity={13} distance={10} color="#ff27c3" />
       <Suspense fallback={null}><Brain progressRef={progressRef} /></Suspense>
     </Canvas>
   </div>
