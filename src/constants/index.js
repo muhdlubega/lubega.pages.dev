@@ -1,7 +1,6 @@
 import cc from "../assets/projects/cc.png";
 import ck from "../assets/projects/ck.png";
 import lo from "../assets/projects/lo.png";
-import mjj from "../assets/projects/mjj.png";
 import ms from "../assets/projects/ms.png";
 import ri from "../assets/projects/ri.png";
 import ss from "../assets/projects/ss.png";

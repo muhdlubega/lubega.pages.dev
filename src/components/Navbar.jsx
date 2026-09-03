@@ -1,86 +1,27 @@
-import { useEffect, useRef, useState } from "react";
-import { FaVolumeMute, FaVolumeUp } from "react-icons/fa";
-import { GrContact, GrProjects, GrStatusInfo } from "react-icons/gr";
-import { NavLink } from "react-router-dom";
-import undertale from "../assets/undertale.mp3";
+import { useEffect, useState } from "react";
+
+const links = ["about", "projects", "contact"];
 
 const Navbar = () => {
-  const isMobile = window.innerWidth < 768;
-
-  const [music, setMusic] = useState(false);
-
-  const audioRef = useRef(new Audio(undertale));
-  audioRef.current.volume = 0.1;
-  audioRef.current.loop = true;
+  const [active, setActive] = useState("home");
 
   useEffect(() => {
-    if (music) {
-      audioRef.current.play();
-    }
-
-    return () => {
-      audioRef.current.pause();
-    };
-  }, [music]);
+    const sections = ["home", ...links].map((id) => document.getElementById(id)).filter(Boolean);
+    const observer = new IntersectionObserver((entries) => {
+      const visible = entries.filter((entry) => entry.isIntersecting).sort((a, b) => b.intersectionRatio - a.intersectionRatio)[0];
+      if (visible) setActive(visible.target.id);
+    }, { rootMargin: "-35% 0px -55%", threshold: [0, 0.25, 0.6] });
+    sections.forEach((section) => observer.observe(section));
+    return () => observer.disconnect();
+  }, []);
 
   return (
-    <header className="header">
-      <div className="flex gap-2">
-        <button
-          onClick={() => setMusic(!music)}
-          className="sticky bottom-2 left-2"
-        >
-          {music ? (
-            <FaVolumeUp color="white" />
-          ) : (
-            <FaVolumeMute color="white" />
-          )}
-        </button>
-        <NavLink
-          to="/"
-          className={({ isActive }) =>
-            isActive
-              ? "text-cyan-500 font-semibold"
-              : "text-white font-semibold"
-          }
-        >
-          <h5>lubega.dev</h5>
-        </NavLink>
-      </div>
-      <nav className="flex text-lg gap-7 font-medium">
-        <NavLink
-          to="/about"
-          className={({ isActive }) =>
-            isActive
-              ? "text-cyan-500 flex items-center gap-2"
-              : "text-white flex items-center gap-2"
-          }
-        >
-          <GrStatusInfo />
-          {!isMobile && "About"}
-        </NavLink>
-        <NavLink
-          to="/projects"
-          className={({ isActive }) =>
-            isActive
-              ? "text-cyan-500 flex items-center gap-2"
-              : "text-white flex items-center gap-2"
-          }
-        >
-          <GrProjects />
-          {!isMobile && "Projects"}
-        </NavLink>
-        <NavLink
-          to="/contact"
-          className={({ isActive }) =>
-            isActive
-              ? "text-cyan-500 flex items-center gap-2"
-              : "text-white flex items-center gap-2"
-          }
-        >
-          <GrContact /> {!isMobile && "Contact"}
-        </NavLink>
+    <header className="nav-shell">
+      <a href="#home" className="brand" aria-label="Lubega — back to top"><span className="brand-mark">L</span><span>lubega<span className="signal">.dev</span></span></a>
+      <nav aria-label="Primary navigation">
+        {links.map((link, index) => <a key={link} href={`#${link}`} className={active === link ? "active" : ""}><span>0{index + 1}</span>{link}</a>)}
       </nav>
+      <a className="nav-status" href="mailto:muhdlubegasiraje@gmail.com"><i /> Available for ideas</a>
     </header>
   );
 };
