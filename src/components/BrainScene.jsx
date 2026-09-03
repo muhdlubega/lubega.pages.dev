@@ -7,6 +7,7 @@ import brainModel from "../assets/brain.glb";
 
 const Brain = ({ progressRef }) => {
   const group = useRef();
+  const positionInitialized = useRef(false);
   const { scene } = useGLTF(brainModel);
   const { viewport } = useThree();
   const brain = useMemo(() => scene.clone(true), [scene]);
@@ -36,7 +37,16 @@ const Brain = ({ progressRef }) => {
     if (!group.current) return;
     const progress = progressRef.current;
     const reduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-    const targetScale = (viewport.width < 5 ? 1.55 : 2.15) + progress * (viewport.width < 5 ? 2.5 : 4.8);
+    const isMobile = viewport.width < 5;
+    const targetScale = (isMobile ? 1.55 : 2.15) + progress * (isMobile ? 2.5 : 4.8);
+    const targetX = isMobile ? 0 : viewport.width * 0.095 * (1 - progress);
+
+    if (!positionInitialized.current) {
+      group.current.position.x = targetX;
+      positionInitialized.current = true;
+    } else {
+      group.current.position.x = THREE.MathUtils.lerp(group.current.position.x, targetX, Math.min(delta * 2.2, 1));
+    }
     group.current.scale.lerp(new THREE.Vector3(targetScale, targetScale, targetScale), Math.min(delta * 2.2, 1));
     if (!reduced) {
       group.current.rotation.y += delta * (0.11 + progress * 0.18);
