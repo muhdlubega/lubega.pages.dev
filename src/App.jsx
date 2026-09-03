@@ -103,7 +103,7 @@ const App = () => {
           <p className="eyebrow"><span className="live-dot" /> AI SYSTEMS / FULL-STACK ENGINEERING</p>
           <h1>Building software<br />that <em>thinks</em><br />and ships.</h1>
           <p className="hero-intro">I’m Muhammad Lubega—an AI-focused full-stack developer turning ambitious ideas into reliable, observable products.</p>
-          <div className="hero-actions"><a className="primary-button" href="#projects">Explore projects <FaArrowRight /></a><a className="ghost-button" href="/MuhammadLubega.pdf" download>Résumé <FiDownload /></a></div>
+          <div className="hero-actions"><a className="primary-button hero-primary" href="#projects">Explore projects <FaArrowRight /></a><a className="ghost-button" href="/MuhammadLubega.pdf" download>Résumé <FiDownload /></a></div>
         </motion.div>
         <div className="hero-sidecopy"><span>BASED IN MALAYSIA</span><span>SCROLL TO ENTER ↓</span></div>
         <div className="brain-label" aria-hidden="true"><span>NEURAL OBJECT / 01</span><i /></div>
