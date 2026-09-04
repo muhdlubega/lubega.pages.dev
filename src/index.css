@@ -212,6 +212,7 @@ footer a:hover { color: var(--lime); }
   .nav-shell { grid-template-columns: 1fr auto; }
   .nav-status { display: none; }
   .featured-podium { grid-template-columns: 1fr; gap: 24px; align-items: stretch; }
+  .featured-card.rank-2 { order: -1; }
   .featured-card.rank-2, .featured-card.rank-2:hover { transform: none; }
   .featured-card { display: grid; grid-template-columns: .9fr 1.1fr; }
   .podium-base { grid-column: 1/-1; height: 48px !important; }
