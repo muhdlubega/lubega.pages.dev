@@ -5,7 +5,7 @@ import { FaArrowRight, FaGithub, FaLinkedinIn } from "react-icons/fa6";
 import { FiArrowUpRight, FiDownload, FiMail, FiX } from "react-icons/fi";
 import BrainScene from "./components/BrainScene";
 import Navbar from "./components/Navbar";
-import { experiences } from "./constants";
+import ExperienceTimeline from "./components/ExperienceTimeline";
 import { aiProjects, featuredProjects, frontendProjects } from "./data/portfolio";
 import "./index.css";
 
@@ -118,22 +118,8 @@ const App = () => {
             ["01", "AI engineering", "Agents, RAG, multimodal systems, evaluations and provider abstraction."], ["02", "Product frontend", "React, Next.js, TypeScript, interaction systems and accessible UI."], ["03", "Cloud backend", "Node.js, Hono, SQL, queues, storage, APIs and auth boundaries."], ["04", "Delivery", "Testing, security, observability, Docker and Cloudflare infrastructure."],
           ].map(([number, title, copy]) => <div className="capability" key={title}><span>{number}</span><h3>{title}</h3><p>{copy}</p></div>)}</motion.div>
         </div>
-        <motion.div className="experience-strip" {...reveal}><div><span className="metric">74%</span><p>smaller wallet bundle delivered</p></div><div><span className="metric">21</span><p>languages supported with i18n + RTL</p></div><div><span className="metric">80%+</span><p>unit-test coverage achieved</p></div><div><span className="metric">3×</span><p>Stars of the Month at Deriv</p></div></motion.div>
-        <div className="experience-timeline">
-          <motion.div {...reveal}><p className="micro-label">EXPERIENCE / CONTINUOUS LEARNING</p><h3>My journey so far.</h3></motion.div>
-          <ol className="experience-track">
-            {[8, 6, 5, 4, 3, 2, 7, 1].map((id) => experiences.find((item) => item.id === id)).map((experience) => (
-              <motion.li key={experience.id} className="experience-entry" {...reveal}>
-                <span className="experience-date">{experience.date}</span>
-                <article className="experience-card">
-                  <p className="micro-label">{experience.company_name}</p>
-                  <h4>{experience.title}</h4>
-                  <ul>{experience.points.map((point) => <li key={point}>{point.trim()}</li>)}</ul>
-                </article>
-              </motion.li>
-            ))}
-          </ol>
-        </div>
+        <motion.div className="experience-strip" {...reveal}><div><span className="metric">74%</span><p>smaller wallet bundle delivered</p></div><div><span className="metric">21</span><p>languages supported with i18n + RTL</p></div><div><span className="metric">80%+</span><p>unit-test coverage achieved</p></div><div><span className="metric">200%+</span><p>Increase in feature rollout speed</p></div></motion.div>
+        <ExperienceTimeline />
       </section>
 
       <section id="projects" className="projects section-shell content-layer">

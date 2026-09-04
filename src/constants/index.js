@@ -68,18 +68,6 @@ export const experiences = [
     ],
   },
   {
-    id: 5,
-    title: "Frontend Full Stack Developer (Freelance)",
-    company_name: "Mindhive Asia Sdn. Bhd.",
-    date: "August 2024 - June 2025",
-    points: [
-      "Led front-end development for AI-driven solutions in Next.js and React, including document processing and accounts payable/receivable automation.",
-      "Partnered closely with backend engineers (Node.js, SQL) and designers to implement and integrate REST APIs, authentication, and data management.",
-      "Delivered 4 full projects for ZUS Coffee and contributed to 2 ongoing enterprise projects, earning positive client feedback for quality and timeliness.",
-      "Implemented reusable UI libraries and modular code structures to improve maintainability across multiple client projects."
-    ],
-  },
-  {
     id: 6,
     title: "GCPBoleh Season 7",
     company_name: "Google",
@@ -106,13 +94,13 @@ export const experiences = [
     company_name: "Deriv",
     date: "August 2023 - Present",
     points: [
+      "Set up and maintain the spec-driven implementation of the AI rework of the entire Trader’s View platform, improving rollout speed by over 200%.",
       " Maintained and enhanced cashier and payment systems for global web applications built with React and TypeScript.",
       "Collaborated with backend, design, and QA teams across multiple regions to develop features and improve architecture in a large-scale monorepo environment.",
       "Increased unit test coverage to over 80% using Jest and supported Cypress.io E2E automation.",
       "Optimized wallet package performance, reducing bundle load size by 74% for faster, more efficient delivery.",
       "Implemented i18n and RTL support for 21 languages, significantly improving accessibility and user reach.",
       "Contributed to the company’s low-code platform redesign using Outsystems, improving maintainability and feature rollout speed.",
-      "3× Stars of the Month awardee for consistently high delivery quality and measurable performance improvements."
     ],
   },
 ];

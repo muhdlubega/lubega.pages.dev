@@ -93,13 +93,26 @@ em { color: transparent; font-style: normal; -webkit-text-stroke: 1px rgba(237, 
 .experience-strip p { margin: 8px 0 0; color: var(--muted); font: 10px/1.5 "DM Mono"; text-transform: uppercase; letter-spacing: .08em; }
 .experience-timeline { position: relative; z-index: 1; margin-top: 110px; }
 .experience-timeline h3 { margin: 0 0 48px; font: 600 clamp(32px, 4vw, 56px) "Syne"; letter-spacing: -.04em; }
-.experience-track { padding: 0; margin: 0; list-style: none; }
-.experience-entry { position: relative; display: grid; grid-template-columns: 200px 1fr; gap: 42px; padding-bottom: 32px; }
-.experience-entry::before { content: ""; position: absolute; left: 215px; top: 18px; bottom: -18px; width: 1px; background: linear-gradient(var(--cyan), var(--line)); }
-.experience-entry:last-child::before { bottom: 32px; }
-.experience-entry::after { content: ""; position: absolute; left: 211px; top: 18px; width: 9px; height: 9px; border: 1px solid var(--cyan); background: #0b1718; box-shadow: 0 0 14px rgba(57,232,255,.35); }
-.experience-date { padding-top: 16px; color: var(--cyan); font: 10px/1.7 "DM Mono"; text-transform: uppercase; }
-.experience-card { padding: clamp(24px, 3vw, 40px); border: 1px solid var(--line); background: rgba(7, 12, 12, .87); }
+.journey-tree { position: relative; }
+.journey-rail { position: absolute; inset: 0 auto 0 50%; width: 2px; transform: translateX(-50%); background: var(--line); pointer-events: none; }
+.journey-progress { width: 100%; background: linear-gradient(var(--cyan), var(--lime)); box-shadow: 0 0 12px rgba(57,232,255,.45); }
+.journey-pointer { position: absolute; left: 50%; z-index: 3; width: 18px; height: 18px; transform: translate(-50%, -50%); border: 1px solid var(--lime); border-radius: 50%; background: #101b0a; box-shadow: 0 0 18px var(--lime); }
+.journey-pointer span { position: absolute; inset: 4px; background: var(--lime); border-radius: 50%; }
+.journey-pointer::after { content: ""; position: absolute; inset: -7px; border: 1px solid var(--lime); border-radius: 50%; animation: journey-ring 2s ease-out infinite; }
+.experience-track { padding: 24px 0; margin: 0; list-style: none; }
+.experience-entry { position: relative; display: grid; grid-template-columns: minmax(0,1fr) 72px minmax(0,1fr); align-items: center; margin-bottom: 64px; }
+.experience-entry:last-child { margin-bottom: 0; }
+.experience-entry::before { content: ""; position: absolute; left: calc(50% - 36px); top: 50%; width: 36px; height: 1px; background: var(--line); transition: background .4s ease; }
+.experience-entry:nth-child(even)::before { left: 50%; }
+.experience-node { position: absolute; z-index: 2; left: 50%; top: 50%; width: 10px; height: 10px; transform: translate(-50%, -50%); border: 1px solid var(--cyan); border-radius: 50%; background: #0b1718; transition: background .4s ease, box-shadow .4s ease; }
+.experience-date { grid-column: 3; grid-row: 1; color: var(--cyan); font: 10px/1.7 "DM Mono"; text-transform: uppercase; }
+.experience-card { grid-column: 1; grid-row: 1; min-width: 0; padding: clamp(24px, 3vw, 40px); border: 1px solid var(--line); background: rgba(7, 12, 12, .9); transition: border-color .4s ease, background .4s ease; }
+.experience-entry:nth-child(even) .experience-card { grid-column: 3; }
+.experience-entry:nth-child(even) .experience-date { grid-column: 1; text-align: right; }
+.experience-entry.is-focused::before { background: var(--lime); }
+.experience-entry.is-focused .experience-node { background: var(--lime); border-color: var(--lime); box-shadow: 0 0 18px var(--lime); }
+.experience-entry.is-focused .experience-card { border-color: rgba(183,255,60,.7); background: rgba(13,24,19,.94); animation: journey-highlight 2.8s ease-in-out infinite; }
+.experience-entry.is-focused .experience-date { color: var(--lime); }
 .experience-card h4 { margin: 0 0 22px; font: 600 clamp(21px, 2.2vw, 30px)/1.25 "Syne"; letter-spacing: -.025em; }
 .experience-card ul { margin: 0; padding-left: 18px; list-style: disc; color: #a7b9b3; font-size: 14px; line-height: 1.8; }
 .experience-card li + li { margin-top: 10px; }
@@ -190,6 +203,8 @@ footer a:hover { color: var(--lime); }
 .modal-links { gap: 24px; padding-top: 24px; border-top: 1px solid var(--line); }
 
 @keyframes pulse { 50% { opacity: .35; transform: scale(.8); } }
+@keyframes journey-ring { from { transform: scale(.65); opacity: .8; } to { transform: scale(1.6); opacity: 0; } }
+@keyframes journey-highlight { 0%, 100% { box-shadow: 0 0 18px rgba(183,255,60,.06), inset 0 0 20px rgba(57,232,255,.02); } 50% { box-shadow: 0 0 32px rgba(183,255,60,.16), inset 0 0 30px rgba(57,232,255,.06); } }
 @keyframes title-neon { 0%, 100% { text-shadow: 0 0 8px rgba(228, 255, 255, .28), 0 0 26px rgba(57, 232, 255, .18), 0 0 58px rgba(183, 255, 60, .08); } 50% { text-shadow: 0 0 11px rgba(228, 255, 255, .42), 0 0 36px rgba(57, 232, 255, .3), 0 0 78px rgba(183, 255, 60, .14); } }
 @keyframes button-flare { 0%, 58% { left: -45%; opacity: 0; } 64% { opacity: .95; } 82%, 100% { left: 125%; opacity: 0; } }
 
@@ -221,9 +236,12 @@ footer a:hover { color: var(--lime); }
   .experience-strip { grid-template-columns: 1fr 1fr; }
   .experience-strip > div:nth-child(2) { border-right: 0; }
   .experience-strip > div:nth-child(-n+2) { border-bottom: 1px solid var(--line); }
-  .experience-entry { grid-template-columns: 1fr; gap: 12px; padding-left: 24px; }
-  .experience-entry::before { left: 4px; }
-  .experience-entry::after { left: 0; }
+  .journey-rail { left: 8px; }
+  .experience-entry { grid-template-columns: minmax(0,1fr); gap: 12px; padding-left: 32px; margin-bottom: 38px; }
+  .experience-entry::before, .experience-entry:nth-child(even)::before { left: 8px; top: 10px; width: 24px; }
+  .experience-node { left: 8px; top: 10px; }
+  .experience-entry .experience-date, .experience-entry:nth-child(even) .experience-date { grid-column: 1; grid-row: 1; text-align: left; }
+  .experience-entry .experience-card, .experience-entry:nth-child(even) .experience-card { grid-column: 1; grid-row: 2; }
   .featured-card { display: flex; }
   .project-grid, .frontend-grid { grid-template-columns: 1fr; }
   .project-card.compact .project-card-body > p, .project-card-body > p:not(.micro-label) { min-height: 0; }
