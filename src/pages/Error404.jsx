@@ -1,4 +1,4 @@
-import ghost from "../assets/ghost.gif";
+import ghost from "../assets/ghost.webp";
 
 const Error404 = () => {
   return (

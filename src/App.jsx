@@ -53,11 +53,12 @@ const ProjectModal = ({ project, onClose }) => {
 
 const FeaturedCard = ({ project, index, onOpen }) => (
   <motion.article className={`featured-card rank-${index + 1}`} style={{ "--accent": project.accent }} {...reveal}>
+    {["codelensa", "trigg"].includes(project.id) && <span className="project-wip">Work in progress</span>}
     <div className="featured-media">
       {project.mediaType === "video" ? <video src={project.media} autoPlay muted loop playsInline aria-label={`${project.name} interface preview`} /> : <img src={project.media} alt={`${project.name} interface preview`} />}
     </div>
     <div className="featured-content"><p className="micro-label">{project.eyebrow}</p><h3>{project.name}</h3><p className="project-tagline">{project.tagline}</p><p>{project.description}</p><button className="text-button" onClick={() => onOpen(project)}>Explore system <FaArrowRight /></button></div>
-    <div className="podium-base"><span>{project.name.toUpperCase()}</span></div>
+    <a className="podium-base" href={project.website} target="_blank" rel="noopener noreferrer" aria-label={`Visit ${project.name} website (opens in a new tab)`}><span>{project.name.toUpperCase()}</span><FiArrowUpRight aria-hidden="true" /></a>
   </motion.article>
 );
 
@@ -103,7 +104,7 @@ const App = () => {
         <motion.div className="hero-copy" initial={{ opacity: 0, y: 24 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.9 }}>
           <p className="eyebrow"><span className="live-dot" /> AI SYSTEMS / FULL-STACK ENGINEERING</p>
           <h1>Building software<br />that <em>thinks</em><br />and ships.</h1>
-          <p className="hero-intro">I’m Muhammad Lubega—an AI-focused full-stack developer turning ambitious ideas into reliable, observable products.</p>
+          <p className="hero-intro">I’m Muhammad Lubega, an AI-focused full-stack developer turning ambitious ideas into reliable, observable products.</p>
           <div className="hero-actions"><a className="primary-button hero-primary" href="#projects">Explore projects <FaArrowRight /></a><a className="ghost-button" href="/MuhammadLubega.pdf" download>Résumé <FiDownload /></a></div>
         </motion.div>
         <div className="hero-sidecopy"><span>BASED IN MALAYSIA</span><span>SCROLL TO ENTER ↓</span></div>
@@ -118,6 +119,7 @@ const App = () => {
             ["01", "AI engineering", "Agents, RAG, multimodal systems, evaluations and provider abstraction."], ["02", "Product frontend", "React, Next.js, TypeScript, interaction systems and accessible UI."], ["03", "Cloud backend", "Node.js, Hono, SQL, queues, storage, APIs and auth boundaries."], ["04", "Delivery", "Testing, security, observability, Docker and Cloudflare infrastructure."],
           ].map(([number, title, copy]) => <div className="capability" key={title}><span>{number}</span><h3>{title}</h3><p>{copy}</p></div>)}</motion.div>
         </div>
+        <motion.h3 className="achievements-title" {...reveal}>Professional achievements</motion.h3>
         <motion.div className="experience-strip" {...reveal}><div><span className="metric">74%</span><p>smaller wallet bundle delivered</p></div><div><span className="metric">21</span><p>languages supported with i18n + RTL</p></div><div><span className="metric">80%+</span><p>unit-test coverage achieved</p></div><div><span className="metric">200%+</span><p>Increase in feature rollout speed</p></div></motion.div>
         <ExperienceTimeline />
       </section>
@@ -135,7 +137,7 @@ const App = () => {
         <SectionTitle index="03" eyebrow="CONTACT / OPEN CHANNEL" title={<>Have a hard problem?<br /><em>Let’s make it real.</em></>} />
         <div className="contact-layout">
           <motion.div className="contact-copy" {...reveal}><p>Open to thoughtful collaborations across AI products, full-stack systems and ambitious frontend engineering.</p><a className="contact-email" href="mailto:muhdlubegasiraje@gmail.com">muhdlubegasiraje@gmail.com <FiArrowUpRight /></a><div className="socials"><ExternalLink href="https://github.com/muhdlubega"><FaGithub /> GitHub</ExternalLink><ExternalLink href="https://www.linkedin.com/in/muhammad-lubega/"><FaLinkedinIn /> LinkedIn</ExternalLink></div></motion.div>
-          <motion.form className="contact-form" onSubmit={handleSubmit} {...reveal}><label><span>Name</span><input required name="name" value={form.name} onChange={(e) => setForm({ ...form, name: e.target.value })} placeholder="Your name" /></label><label><span>Email</span><input required type="email" name="email" value={form.email} onChange={(e) => setForm({ ...form, email: e.target.value })} placeholder="you@company.com" /></label><label><span>Project signal</span><textarea required rows="5" name="message" value={form.message} onChange={(e) => setForm({ ...form, message: e.target.value })} placeholder="What are we building?" /></label><button className="primary-button" disabled={formState === "sending"}>{formState === "sending" ? "Transmitting…" : "Send transmission"} <FiMail /></button><p className={`form-status ${formState}`} role="status">{formState === "sent" && "Message received. I’ll be in touch."}{formState === "error" && "The direct channel failed—please use the email link."}</p></motion.form>
+          <motion.form className="contact-form" onSubmit={handleSubmit} {...reveal}><label><span>Name</span><input required name="name" value={form.name} onChange={(e) => setForm({ ...form, name: e.target.value })} placeholder="Your name" /></label><label><span>Email</span><input required type="email" name="email" value={form.email} onChange={(e) => setForm({ ...form, email: e.target.value })} placeholder="you@company.com" /></label><label><span>Project signal</span><textarea required rows="5" name="message" value={form.message} onChange={(e) => setForm({ ...form, message: e.target.value })} placeholder="What are we building?" /></label><button className="primary-button" disabled={formState === "sending"}>{formState === "sending" ? "Transmitting…" : "Send transmission"} <FiMail /></button><p className={`form-status ${formState}`} role="status">{formState === "sent" && "Message received. I’ll be in touch."}{formState === "error" && "The direct channel failed. Please use the email link."}</p></motion.form>
         </div>
         <footer><span>© {new Date().getFullYear()} MUHAMMAD LUBEGA</span><span>DESIGNED + ENGINEERED WITH INTENT</span><a href="#home">BACK TO SIGNAL ↑</a></footer>
         <p className="model-credit">3D model: <a href="https://sketchfab.com/3d-models/brain-hologram-09d686a1a1f745cba6b2385d0c831214" target="_blank" rel="noreferrer">Brain Hologram by Oxterium on Sketchfab ↗</a></p>

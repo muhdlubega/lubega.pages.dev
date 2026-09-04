@@ -38,7 +38,9 @@ const Brain = ({ progressRef }) => {
     const progress = progressRef.current;
     const reduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
     const isMobile = viewport.width < 5;
-    const targetScale = (isMobile ? 1.55 : 2.15) + progress * (isMobile ? 2.5 : 4.8);
+    const baseScale = isMobile ? 1.55 : 2.15;
+    const maxScale = (baseScale + (isMobile ? 2.5 : 4.8)) * 2;
+    const targetScale = THREE.MathUtils.lerp(baseScale, maxScale, progress);
     const targetX = isMobile ? 0 : viewport.width * 0.095 * (1 - progress);
 
     if (!positionInitialized.current) {
@@ -49,7 +51,7 @@ const Brain = ({ progressRef }) => {
     }
     group.current.scale.lerp(new THREE.Vector3(targetScale, targetScale, targetScale), Math.min(delta * 2.2, 1));
     if (!reduced) {
-      group.current.rotation.y += delta * (0.11 + progress * 0.18);
+      group.current.rotation.y += delta * THREE.MathUtils.lerp(0.11, 0.025, progress);
       group.current.rotation.x = THREE.MathUtils.lerp(group.current.rotation.x, -0.08 + progress * 0.42, delta * 1.4);
       group.current.rotation.z = THREE.MathUtils.lerp(group.current.rotation.z, progress * -0.22, delta * 1.4);
     }

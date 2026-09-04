@@ -17,7 +17,7 @@ const Navbar = () => {
 
   return (
     <header className="nav-shell">
-      <a href="#home" className="brand" aria-label="Lubega — back to top"><span className="brand-mark">L</span><span>lubega<span className="signal">.dev</span></span></a>
+      <a href="#home" className="brand" aria-label="Lubega: back to top"><span className="brand-mark">L</span><span>lubega<span className="signal">.dev</span></span></a>
       <nav aria-label="Primary navigation">
         {links.map((link, index) => <a key={link} href={`#${link}`} className={active === link ? "active" : ""}><span>0{index + 1}</span>{link}</a>)}
       </nav>

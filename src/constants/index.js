@@ -1,16 +1,16 @@
-import cc from "../assets/projects/cc.png";
-import ck from "../assets/projects/ck.png";
-import lo from "../assets/projects/lo.png";
-import ms from "../assets/projects/ms.png";
-import ri from "../assets/projects/ri.png";
-import ss from "../assets/projects/ss.png";
-import vg from "../assets/projects/vg.png";
-import mu from "../assets/projects/mu.png";
-import ba from "../assets/projects/ba.png";
-import ip from "../assets/projects/ip.png";
-import fa from "../assets/projects/fa.png";
-import mt from "../assets/projects/mt.png";
-import sa from "../assets/projects/sa.png";
+import cc from "../assets/projects/cc.webp";
+import ck from "../assets/projects/ck.webp";
+import lo from "../assets/projects/lo.webp";
+import ms from "../assets/projects/ms.webp";
+import ri from "../assets/projects/ri.webp";
+import ss from "../assets/projects/ss.webp";
+import vg from "../assets/projects/vg.webp";
+import mu from "../assets/projects/mu.webp";
+import ba from "../assets/projects/ba.webp";
+import ip from "../assets/projects/ip.webp";
+import fa from "../assets/projects/fa.webp";
+import mt from "../assets/projects/mt.webp";
+import sa from "../assets/projects/sa.webp";
 
 export const skills = [
   {
@@ -181,7 +181,7 @@ export const projects = [
     name: "Muizzle.me",
     description:
       "Muizzle.me is a simple puzzle game designed for movie lovers where user can guess movie titles based on the screenshots of the movie displayed. Muizzle uses Cloudflare R2 bucket for image storage and local storage for user statistics. It is mainly writted in React Typescript and CSS for styling. It also has integrated Google Analytics and Google Adsense for analytical and monetization purposes.",
-    link: "https://muizzle.me/",
+    link: "https://muizzle.pages.dev/",
     sourceCode: "https://github.com/muhdlubega/muizzle",
     buttontext: "Open Website"
   },
